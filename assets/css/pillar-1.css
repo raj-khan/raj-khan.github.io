@@ -8724,3 +8724,15 @@ a.theme-btn-on-bg:hover, a.theme-btn-on-bg:focus, a.theme-btn-on-bg:active, .the
     border-radius: 4px;
   }
 }
+
+
+#downloadCV{
+  position: fixed;
+  top: 50px;
+  right: 50px;
+  font-size: 80px !important;
+}
+
+#downloadCV:hover{
+  color: red;
+}
