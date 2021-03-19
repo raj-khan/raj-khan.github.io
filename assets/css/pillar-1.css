@@ -8736,3 +8736,16 @@ a.theme-btn-on-bg:hover, a.theme-btn-on-bg:focus, a.theme-btn-on-bg:active, .the
 #downloadCV:hover{
   color: red;
 }
+
+.project_responsibilities li {
+    font-size: 13px;
+    font-weight: 700;
+    font-style: oblique;
+}
+
+@media only screen and (max-width:767px)
+{
+    #downloadCV {
+        display: none;
+    }
+}
