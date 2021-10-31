@@ -3,7 +3,7 @@ const videoCount = document.getElementById('videoCount');
 const viewCount = document.getElementById('viewCount');
 
 function getSubscribers () {
-    let youtubeUser = document.getElementById("channelId").value; //
+    let youtubeUser = document.getElementById("channelId").value; //AIzaSyDCFmOwxCP92LeTwidx5_KQCU6qzQPmwSo
     let youtubeKey = document.getElementById("apiKey").value;
     fetch(`https://www.googleapis.com/youtube/v3/channels?part=statistics&id=${youtubeUser}&key=${youtubeKey}`)
         .then(response => {
