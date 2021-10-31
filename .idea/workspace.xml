@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f4bfe1df-f568-41d5-9950-8e1d80facf37" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/youtube-subscribers/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/youtube-subscribers/js/script.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,54 +26,56 @@
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.41" value="1" />
           <entry key="project.open.time.6" value="1" />
-          <entry key="project.opened" value="14" />
+          <entry key="project.open.time.9" value="1" />
+          <entry key="project.opened" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="2" />
           <entry key="html" value="1" />
+          <entry key="js" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="2" />
           <entry key="HTML" value="1" />
+          <entry key="JavaScript" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="126" />
-          <entry key="html" value="2357" />
+          <entry key="html" value="2371" />
+          <entry key="js" value="16" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="126" />
-          <entry key="HTML" value="2357" />
+          <entry key="HTML" value="2371" />
+          <entry key="JavaScript" value="16" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/index.html">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/youtube-subscribers/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="183">
-              <caret line="276" column="84" selection-start-line="276" selection-start-column="80" selection-end-line="276" selection-end-column="84" />
-              <folding>
-                <element signature="n#style#0;n#a#0;n#div#1;n#li#0;n#ul#0;n#div#0;n#section#2;n#div#1;n#div#0;n#div#0;n#div#0;n#article#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="-300">
+              <caret line="12" column="33" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/css/pillar-1.css">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/youtube-subscribers/js/script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="301">
-              <caret line="8759" column="26" lean-forward="true" selection-start-line="8759" selection-start-column="26" selection-end-line="8759" selection-end-column="26" />
+            <state relative-caret-position="775">
+              <caret line="31" column="8" lean-forward="true" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -102,6 +105,8 @@
       <list>
         <option value="$PROJECT_DIR$/assets/css/pillar-1.css" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/youtube-subscribers/index.html" />
+        <option value="$PROJECT_DIR$/youtube-subscribers/js/script.js" />
       </list>
     </option>
   </component>
@@ -136,13 +141,13 @@
             <path>
               <item name="raj-khan.github.io" type="b2602c69:ProjectViewProjectNode" />
               <item name="raj-khan.github.io" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="youtube-subscribers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="raj-khan.github.io" type="b2602c69:ProjectViewProjectNode" />
               <item name="raj-khan.github.io" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
+              <item name="youtube-subscribers" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -193,17 +198,18 @@
       <workItem from="1603253203668" duration="608000" />
       <workItem from="1607489237937" duration="666000" />
       <workItem from="1616169550195" duration="4719000" />
+      <workItem from="1635670132404" duration="996000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25734000" />
+    <option name="totallyTimeSpent" value="26730000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.13959731" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1391258" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -231,20 +237,34 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/assets/css/pillar-1.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="8759" column="26" lean-forward="true" selection-start-line="8759" selection-start-column="26" selection-end-line="8759" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="276" column="84" selection-start-line="276" selection-start-column="80" selection-end-line="276" selection-end-column="84" />
+        <state relative-caret-position="258">
+          <caret line="265" column="15" selection-start-line="265" selection-start-column="15" selection-end-line="265" selection-end-column="15" />
           <folding>
             <element signature="n#style#0;n#a#0;n#div#1;n#li#0;n#ul#0;n#div#0;n#section#2;n#div#1;n#div#0;n#div#0;n#div#0;n#article#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/pillar-1.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="26">
+          <caret line="8748" column="14" lean-forward="true" selection-start-line="8748" selection-start-column="14" selection-end-line="8748" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/youtube-subscribers/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-300">
+          <caret line="12" column="33" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/youtube-subscribers/js/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="775">
+          <caret line="31" column="8" lean-forward="true" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="8" />
         </state>
       </provider>
     </entry>

@@ -21,7 +21,15 @@ function getSubscribers () {
 }
 
 function aboutChannel() {
-    let channelId = document.getElementById("channelId").value + '/about';
+    let channelId = document.getElementById("channelId").value;
     let url = "https://www.youtube.com/channel/";
-    window.open(url + channelId, '_blank');
+    let about = "/about";
+    if(channelId)
+    {
+        window.open(url + channelId + about, '_blank');
+    }
+    else
+    {
+        window.location.href = "#";
+    }
 }
