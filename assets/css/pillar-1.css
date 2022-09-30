@@ -457,6 +457,9 @@ mark,
   padding-left: 0;
   list-style: none;
 }
+.list-inline li {
+  margin-bottom: 5px;
+}
 
 .list-inline-item {
   display: inline-block;
@@ -4579,7 +4582,7 @@ input[type="button"].btn-block {
 .badge-light {
   color: #212529;
   background-color: #f8f9fa;
-  border: 1px solid;
+  /*border: 1px solid;*/
   padding: 5px;
 }
 
@@ -8554,17 +8557,20 @@ a.theme-btn-on-bg:hover, a.theme-btn-on-bg:focus, a.theme-btn-on-bg:active, .the
 .resume-header {
   background: #434E5E;
   color: rgba(255, 255, 255, 0.9);
-  height: 220px;
+  height: 180px;
 }
 
 .resume-header .picture {
   width: 180px;
-  height: 220px;
+  height: 180px;
 }
 
+.resume-skill-item {
+  text-align: center;
+}
 .resume-header .name {
-  font-size: 2.25rem;
-  letter-spacing: 0.175rem;
+  font-size: 2rem;
+  letter-spacing: 0.150rem;
   font-weight: 900;
 }
 
@@ -8836,4 +8842,10 @@ a.theme-btn-on-bg:hover, a.theme-btn-on-bg:focus, a.theme-btn-on-bg:active, .the
         margin-top: 0;
         opacity: 0;
     }
+}
+
+p {
+  font-family: 'Inter';
+  text-align: justify;
+  color: #0e1013;
 }
