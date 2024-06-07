@@ -8562,6 +8562,10 @@ a.theme-btn-on-bg:hover, a.theme-btn-on-bg:focus, a.theme-btn-on-bg:active, .the
   height: auto;
 }
 
+.list-resume-header {
+  display: inline-flex;
+}
+
 .resume-header .picture {
   width: 180px;
   height: auto;
