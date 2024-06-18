@@ -4489,8 +4489,8 @@ input[type="button"].btn-block {
 .badge {
   display: inline-block;
   padding: 0.25em 0.4em;
-  font-size: 75%;
-  font-weight: 700;
+  font-size: 80%;
+  font-weight: 400;
   line-height: 1;
   text-align: center;
   white-space: nowrap;
@@ -8623,7 +8623,8 @@ a.theme-btn-on-bg:hover, a.theme-btn-on-bg:focus, a.theme-btn-on-bg:active, .the
 }
 
 .resume-section-content {
-  color: #58677c;
+  /* color: #58677c; */
+  color: #3a3838;
 }
 
 .resume-timeline {
@@ -8697,7 +8698,7 @@ a.theme-btn-on-bg:hover, a.theme-btn-on-bg:focus, a.theme-btn-on-bg:active, .the
 }
 
 .resume-degree-time {
-  color: #aab4c3;
+  color: #474849;
   font-size: 0.875rem;
 }
 
