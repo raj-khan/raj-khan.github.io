@@ -2,12 +2,12 @@ import Link from 'next/link'
 
 export function Hero() {
   return (
-    <section id="hero" className="pt-20 pb-16 bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800">
-      <div className="container-max-width section-padding">
+    <section id="hero" className="min-h-screen pt-20 pb-16 bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 flex items-center">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         <div className="text-center">
           <h1 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6">
             Hi, I'm{' '}
-            <span className="text-blue-600 dark:text-blue-400">Your Name</span>
+            <span className="text-blue-600 dark:text-blue-400">Meher Ullah Khan Raj</span>
           </h1>
           <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
             Full-Stack Developer specializing in JavaScript, TypeScript, Node.js, and modern web technologies
@@ -17,14 +17,14 @@ export function Hero() {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-            <Link href="#projects" className="btn-primary">
+            <Link href="#projects" className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors duration-200">
               View My Work
             </Link>
-            <Link href="#contact" className="btn-secondary">
+            <Link href="#contact" className="inline-flex items-center px-6 py-3 border border-gray-300 text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors duration-200">
               Get In Touch
             </Link>
             <a
-              href="/resume.pdf"
+              href="/Meher Ullah - Full-Stack Software Engineer.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center px-6 py-3 border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white rounded-md font-medium transition-colors duration-200"
@@ -39,7 +39,7 @@ export function Hero() {
           {/* Tech Icons */}
           <div className="flex flex-wrap justify-center items-center gap-8 text-gray-400 dark:text-gray-500">
             {['JavaScript', 'TypeScript', 'React', 'Node.js', 'Next.js', 'PostgreSQL'].map((tech) => (
-              <span key={tech} className="text-sm font-medium">
+              <span key={tech} className="text-sm font-medium px-3 py-1 bg-white/20 rounded-full">
                 {tech}
               </span>
             ))}
