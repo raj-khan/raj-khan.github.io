@@ -46,6 +46,17 @@ export function Footer() {
           </div>
           
           <div>
+            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
+            <ul className="space-y-2 text-gray-300">
+              <li><a href="#about" className="hover:text-white transition-colors">About</a></li>
+              <li><a href="#skills" className="hover:text-white transition-colors">Skills</a></li>
+              <li><a href="#projects" className="hover:text-white transition-colors">Projects</a></li>
+              <li><a href="/blog" className="hover:text-white transition-colors">Blog</a></li>
+              <li><a href="#contact" className="hover:text-white transition-colors">Contact</a></li>
+            </ul>
+          </div>
+          
+          <div>
             <h4 className="text-lg font-semibold mb-4">Technologies</h4>
             <ul className="space-y-2 text-gray-300">
               <li>JavaScript & TypeScript</li>
@@ -63,15 +74,4 @@ export function Footer() {
       </div>
     </footer>
   )
-}">Quick Links</h4>
-            <ul className="space-y-2 text-gray-300">
-              <li><a href="#about" className="hover:text-white transition-colors">About</a></li>
-              <li><a href="#skills" className="hover:text-white transition-colors">Skills</a></li>
-              <li><a href="#projects" className="hover:text-white transition-colors">Projects</a></li>
-              <li><a href="/blog" className="hover:text-white transition-colors">Blog</a></li>
-              <li><a href="#contact" className="hover:text-white transition-colors">Contact</a></li>
-            </ul>
-          </div>
-          
-          <div>
-            <h4 className="text-lg font-semibold mb-4
+}
