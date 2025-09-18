@@ -5,10 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "export": "next build && next export",
     "start": "next start",
-    "lint": "next lint",
-    "deploy": "npm run export && touch out/.nojekyll && touch out/CNAME && echo 'yourdomain.com' > out/CNAME"
+    "lint": "next lint"
   },
   "dependencies": {
     "next": "^14.0.0",
@@ -16,14 +14,12 @@
     "react-dom": "^18.2.0",
     "gray-matter": "^4.0.3",
     "remark": "^14.0.3",
-    "remark-html": "^15.0.2",
-    "date-fns": "^2.30.0"
+    "remark-html": "^15.0.2"
   },
   "devDependencies": {
     "@types/node": "^20.8.0",
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0",
-    "@tailwindcss/typography": "^0.5.10",
     "autoprefixer": "^10.4.16",
     "eslint": "^8.50.0",
     "eslint-config-next": "^14.0.0",
