@@ -20,7 +20,7 @@ export function Header() {
       <nav className="container-max-width section-padding">
         <div className="flex justify-between items-center py-4">
           <Link href="/" className="text-xl font-bold text-gray-900 dark:text-white">
-            YourName
+            Raj Khan
           </Link>
 
           {/* Desktop Navigation */}
