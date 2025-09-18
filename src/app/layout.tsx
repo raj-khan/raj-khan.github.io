@@ -1,36 +1,27 @@
-import './globals.css'
-import { Inter } from 'next/font/google'
-import { Header } from '@/components/Header'
-import { Footer } from '@/components/Footer'
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-const inter = Inter({ subsets: ['latin'] })
-
-export const metadata = {
-  title: 'Your Name - Software Developer',
-  description: 'Full-stack developer specializing in JavaScript, TypeScript, Node.js, and PostgreSQL',
-  keywords: 'software developer, JavaScript, TypeScript, Node.js, React, Next.js, PostgreSQL',
-  authors: [{ name: 'Your Name' }],
-  openGraph: {
-    title: 'Your Name - Software Developer',
-    description: 'Full-stack developer specializing in JavaScript, TypeScript, Node.js, and PostgreSQL',
-    type: 'website',
-  },
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply transition-colors duration-300;
+  }
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
-  return (
-    <html lang="en">
-      <body className={`${inter.className} bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100`}>
-        <Header />
-        <main className="min-h-screen">
-          {children}
-        </main>
-        <Footer />
-      </body>
-    </html>
-  )
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors duration-200;
+  }
+  
+  .btn-secondary {
+    @apply inline-flex items-center px-6 py-3 border border-gray-300 text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors duration-200;
+  }
+  
+  .card {
+    @apply bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200;
+  }
 }
