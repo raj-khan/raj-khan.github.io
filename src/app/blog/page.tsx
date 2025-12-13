@@ -2,8 +2,22 @@ import Link from 'next/link'
 import { getAllPosts } from '@/lib/blog'
 
 export const metadata = {
-  title: 'Blog - Your Name',
-  description: 'Articles about web development, JavaScript, TypeScript, and software engineering best practices.',
+  title: 'Blog - AI-Augmented Development Insights',
+  description: 'Expert insights on AI-augmented development, TypeScript, React, Next.js, AWS cloud architecture, and modern software engineering from Md Meher Ullah - AI-Augmented Software Engineer in Kuala Lumpur.',
+  keywords: [
+    'AI-Augmented Development Blog',
+    'TypeScript Tutorials',
+    'React Best Practices',
+    'Next.js Development',
+    'AWS Cloud Architecture',
+    'Software Engineering Malaysia',
+    'Full-Stack Development Blog',
+  ],
+  openGraph: {
+    title: 'Blog - AI-Augmented Development Insights',
+    description: 'Expert insights on AI-augmented development, TypeScript, React, Next.js, and modern software engineering.',
+    type: 'website',
+  },
 }
 
 export default async function BlogPage() {
