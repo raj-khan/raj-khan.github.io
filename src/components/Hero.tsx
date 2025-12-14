@@ -1,10 +1,19 @@
+'use client'
+
 import Link from 'next/link'
 
 export function Hero() {
+  const scrollToProjects = () => {
+    const projectsSection = document.querySelector('#projects')
+    if (projectsSection) {
+      projectsSection.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
+
   return (
-    <section id="hero" className="relative min-h-screen pt-20 pb-16 flex items-center overflow-hidden">
+    <section id="hero" className="relative min-h-screen pt-20 pb-32 flex items-center">
       {/* Animated Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 overflow-hidden">
         <div className="absolute top-0 -left-4 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
         <div className="absolute top-0 -right-4 w-72 h-72 bg-yellow-500 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
         <div className="absolute -bottom-8 left-20 w-72 h-72 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
@@ -97,14 +106,18 @@ export function Hero() {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+      <button
+        onClick={scrollToProjects}
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 cursor-pointer group transition-all duration-300 hover:scale-110"
+        aria-label="Scroll to projects section"
+      >
         <div className="flex flex-col items-center">
-          <span className="text-white/60 text-sm mb-2">Scroll to explore</span>
-          <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-white/60 rounded-full mt-2 animate-bounce"></div>
+          <span className="text-white/60 text-sm mb-2 group-hover:text-white/80 transition-colors">Scroll to explore</span>
+          <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center group-hover:border-white/50 transition-colors">
+            <div className="w-1 h-3 bg-white/60 rounded-full mt-2 animate-bounce group-hover:bg-white/80"></div>
           </div>
         </div>
-      </div>
+      </button>
     </section>
   )
 }
