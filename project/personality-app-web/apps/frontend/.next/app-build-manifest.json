@@ -1,0 +1,52 @@
+{
+  "pages": {
+    "/_not-found/page": [
+      "static/chunks/webpack-daf1bb0e538a7e50.js",
+      "static/chunks/10389cdf-0acc70bab92d28a1.js",
+      "static/chunks/880-b97c467073defb32.js",
+      "static/chunks/main-app-2721d0edd7430681.js",
+      "static/chunks/app/_not-found/page-20f097c7c407acad.js"
+    ],
+    "/layout": [
+      "static/chunks/webpack-daf1bb0e538a7e50.js",
+      "static/chunks/10389cdf-0acc70bab92d28a1.js",
+      "static/chunks/880-b97c467073defb32.js",
+      "static/chunks/main-app-2721d0edd7430681.js",
+      "static/css/3033e8bbbee1145a.css",
+      "static/chunks/248-5aefe54752be0bfa.js",
+      "static/chunks/app/layout-c674d9fceaec5894.js"
+    ],
+    "/page": [
+      "static/chunks/webpack-daf1bb0e538a7e50.js",
+      "static/chunks/10389cdf-0acc70bab92d28a1.js",
+      "static/chunks/880-b97c467073defb32.js",
+      "static/chunks/main-app-2721d0edd7430681.js",
+      "static/chunks/248-5aefe54752be0bfa.js",
+      "static/chunks/app/page-44741a6d309e8836.js"
+    ],
+    "/result/page": [
+      "static/chunks/webpack-daf1bb0e538a7e50.js",
+      "static/chunks/10389cdf-0acc70bab92d28a1.js",
+      "static/chunks/880-b97c467073defb32.js",
+      "static/chunks/main-app-2721d0edd7430681.js",
+      "static/chunks/280-0950403090ab6088.js",
+      "static/chunks/848-626a21a84218abfa.js",
+      "static/chunks/app/result/page-30cfab2d7ab18a44.js"
+    ],
+    "/dashboard/page": [
+      "static/chunks/webpack-daf1bb0e538a7e50.js",
+      "static/chunks/10389cdf-0acc70bab92d28a1.js",
+      "static/chunks/880-b97c467073defb32.js",
+      "static/chunks/main-app-2721d0edd7430681.js",
+      "static/chunks/app/dashboard/page-ad0abab0f0b9ad59.js"
+    ],
+    "/test/page": [
+      "static/chunks/webpack-daf1bb0e538a7e50.js",
+      "static/chunks/10389cdf-0acc70bab92d28a1.js",
+      "static/chunks/880-b97c467073defb32.js",
+      "static/chunks/main-app-2721d0edd7430681.js",
+      "static/chunks/848-626a21a84218abfa.js",
+      "static/chunks/app/test/page-ac89bd4c47618b5e.js"
+    ]
+  }
+}

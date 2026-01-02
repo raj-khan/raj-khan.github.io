@@ -1,0 +1,52 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+
+    - name: Install pnpm
+      run: npm install -g pnpm
+
+    - name: Build personality app
+      run: |
+        cd project/personality-app-web
+        pnpm install
+        cd apps/frontend
+        rm -rf src/app/auth
+        pnpm build
+        cd /home/runner/work/raj-khan.github.io/raj-khan.github.io
+        mkdir -p public/project
+        cp -r project/personality-app-web/apps/frontend/out public/project/personality-web-app
+
+    - name: Install portfolio dependencies
+      run: npm install
+
+    - name: Build portfolio
+      run: npm run build
+
+    - name: List output directory
+      run: |
+        echo "Contents of current directory:"
+        ls -la
+        echo "Contents of out directory:"
+        ls -la out/ || echo "out directory does not exist"
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./out
+        enable_jekyll: false
