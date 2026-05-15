@@ -1,11 +1,8 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { ThemeProvider } from "@/contexts/ThemeContext";
-
-const inter = Inter({ subsets: ["latin"] });
+import { CommandPalette } from "@/components/CommandPalette";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://meherullah.dev/";
 const siteName = "Md Meher Ullah - AI-Augmented Software Engineer";
@@ -98,13 +95,22 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en" suppressHydrationWarning>
-			<body className={inter.className} suppressHydrationWarning>
-				<ThemeProvider>
+		<html lang="en">
+			<head>
+				<link rel="preconnect" href="https://fonts.googleapis.com" />
+				<link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+				<link
+					rel="stylesheet"
+					href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap"
+				/>
+			</head>
+			<body>
+				<div className="app">
 					<Header />
 					{children}
 					<Footer />
-				</ThemeProvider>
+				</div>
+				<CommandPalette />
 			</body>
 		</html>
 	);
