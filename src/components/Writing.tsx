@@ -1,14 +1,12 @@
 import { Icon } from '@/components/Icons'
 
-const POSTS = [
-  { date: 'Apr 12 · 2026', title: 'Why I let the agent write tests first', meta: ['agentic', '8 min read'] },
-  { date: 'Mar 03 · 2026', title: 'Refactoring a 4-year-old NestJS monolith without downtime', meta: ['backend', '12 min read'] },
-  { date: 'Feb 14 · 2026', title: 'Specs are the new prompts: what e2spec taught me', meta: ['ai-workflow', '6 min read'] },
-  { date: 'Jan 20 · 2026', title: 'Postgres beats your vector DB until it doesn\'t', meta: ['data', '9 min read'] },
-  { date: 'Dec 02 · 2025', title: 'A senior engineer\'s case against vibe coding', meta: ['essay', '11 min read'] },
-]
+type Post = { date: string; title: string; href: string; meta: [string, string] }
+
+const POSTS: Post[] = []
 
 export function Writing() {
+  if (POSTS.length === 0) return null
+
   return (
     <section className="section container reveal">
       <div className="section-head">
@@ -28,7 +26,7 @@ export function Writing() {
       </div>
       <div className="writing-list">
         {POSTS.map((p, i) => (
-          <a className="writing-row" key={i} href="#">
+          <a className="writing-row" key={i} href={p.href}>
             <div className="date">{p.date}</div>
             <div>
               <div className="title">{p.title}</div>

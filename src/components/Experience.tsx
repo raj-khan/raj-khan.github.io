@@ -1,16 +1,12 @@
 const STATS = [
   { num: '8', small: '+ yrs', label: 'shipping production code' },
-  { num: '30', small: '+', label: 'products & features in production' },
-  { num: '12', small: '', label: 'enterprise & client teams' },
-  { num: '5', small: '+', label: 'open-source projects maintained' },
 ]
 
 const MISSIONS = [
-  { when: '2023 — now', what: 'Full-stack engineer', where: 'Snappymob · Kuala Lumpur', status: 'active' },
-  { when: '2020 — 2023', what: 'Senior software engineer', where: 'Enterprise SaaS & financial systems', status: 'done' },
-  { when: '2018 — 2020', what: 'Full-stack engineer', where: 'Product & client work, MVPs & dashboards', status: 'done' },
-  { when: '2017 — 2018', what: 'Software engineer', where: 'Backend services & integrations', status: 'done' },
-  { when: 'Ongoing', what: 'Independent / open-source', where: 'aiagentflow, e2spec, dev-workflow tooling', status: 'active' },
+  { when: '2022 — now', what: 'Senior Software Engineer', where: 'Snappymob · Kuala Lumpur, Malaysia', status: 'active' },
+  { when: '2022', what: 'PHP Developer', where: 'Wipro Bangladesh Limited · Dhaka', status: 'done' },
+  { when: '2019 — 2022', what: 'Software Developer', where: 'SCT-Bangla Limited · Dhaka', status: 'done' },
+  { when: '2017 — 2019', what: 'Full-Stack Web Developer', where: 'Bangladesh Software Development (BSD) · Dhaka', status: 'done' },
 ]
 
 export function Experience() {
@@ -27,8 +23,8 @@ export function Experience() {
           </h2>
         </div>
         <p className="section-sub">
-          No bootcamps, no buzzword resumes. Just shipped systems that customers paid for or relied
-          on.
+          Enterprise systems, SaaS products, and internal tools — owned end-to-end across frontend,
+          backend, and infrastructure.
         </p>
       </div>
       <div className="experience-grid">
