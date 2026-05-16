@@ -1,3 +1,4 @@
+import { Fragment } from 'react'
 import { Icon } from '@/components/Icons'
 
 const AGENTS = [
@@ -31,8 +32,8 @@ export function AgenticEngineering() {
       <div className="agentic-grid">
         <div className="agent-flow">
           {AGENTS.map((a, i) => (
-            <>
-              <div className={'agent-node ' + a.type} key={i}>
+            <Fragment key={i}>
+              <div className={'agent-node ' + a.type}>
                 <div className="agent-icon">{a.icon}</div>
                 <div style={{ minWidth: 0 }}>
                   <div className="agent-name">{a.name}</div>
@@ -47,8 +48,8 @@ export function AgenticEngineering() {
                   <span className="dot"></span> {a.status}
                 </div>
               </div>
-              {i < AGENTS.length - 1 && <div className="agent-arrow" key={'arrow-' + i}></div>}
-            </>
+              {i < AGENTS.length - 1 && <div className="agent-arrow"></div>}
+            </Fragment>
           ))}
         </div>
         <div className="agent-copy">

@@ -5,82 +5,43 @@ type Project = {
   name: string
   badge: string
   tagline: string
-  problem: string
-  role: string
-  impact: string
+  about: string
   stack: string[]
   links: ProjectLink[]
 }
 
 const PROJECTS: Project[] = [
   {
-    name: 'raj-khan/aiagentflow',
-    badge: 'featured',
-    tagline: 'Local-first CLI for orchestrating multi-agent software engineering workflows.',
-    problem: 'Coding agents are powerful but chaotic — no shared context, no review gates, no auditability.',
-    role: 'Creator & maintainer · architecture, CLI, agent contracts, ops',
-    impact: 'Brings agent runs into a structured pipeline with checkpoints, review, and replay — usable on real codebases.',
-    stack: ['TypeScript', 'Node.js', 'CLI', 'LLM tooling', 'git'],
-    links: [
-      { label: 'github', icon: <Icon.github />, href: 'https://github.com/raj-khan' },
-      { label: 'readme', icon: <Icon.book />, href: '#' },
-    ],
+    name: 'raj-khan/aiagentflow.dev',
+    badge: 'public',
+    tagline: 'Site & resources for the aiagentflow project — agentic engineering workflows.',
+    about: 'Documentation and resources for orchestrating multi-agent software engineering with structured pipelines, checkpoints, and review.',
+    stack: ['TypeScript', 'Next.js', 'Agentic'],
+    links: [{ label: 'github', icon: <Icon.github />, href: 'https://github.com/raj-khan/aiagentflow.dev' }],
   },
   {
-    name: 'raj-khan/e2spec',
-    badge: 'featured',
-    tagline: 'Turn rough product ideas into developer-ready specs in minutes.',
-    problem: 'Founders pitch ideas; engineers need scope. The translation layer is where most projects stall.',
-    role: 'Creator · spec generation pipeline, prompt design, output schema',
-    impact: 'Converts a 2-paragraph idea into milestones, user stories, data model sketch, and a ticket-shaped backlog.',
-    stack: ['TypeScript', 'Next.js', 'LLM', 'structured output'],
-    links: [
-      { label: 'github', icon: <Icon.github />, href: 'https://github.com/raj-khan' },
-      { label: 'live', icon: <Icon.external />, href: '#' },
-    ],
+    name: 'raj-khan/nextjs-supabase-saas-boilerplate',
+    badge: 'public',
+    tagline: 'Reusable architecture and engineering conventions for Next.js + Supabase SaaS.',
+    about: 'Coding-agent workflow, repo structure, and opinionated conventions I reach for when starting a new SaaS — auth, database, and deploy patterns included.',
+    stack: ['TypeScript', 'Next.js', 'Supabase', 'SaaS'],
+    links: [{ label: 'github', icon: <Icon.github />, href: 'https://github.com/raj-khan/nextjs-supabase-saas-boilerplate' }],
   },
   {
-    name: 'snappymob/SEORanksLab',
-    badge: 'client',
-    tagline: 'Turn Google Search Console data into a prioritised SEO action workflow.',
-    problem: 'GSC dumps thousands of queries; teams don\'t know which 20 to act on this week.',
-    role: 'Full-stack engineer · backend pipeline, scoring engine, dashboard UI',
-    impact: 'Ranks opportunities by impact × effort, generates briefs, and tracks delta. Used by content teams weekly.',
-    stack: ['Next.js', 'NestJS', 'PostgreSQL', 'AWS', 'GSC API'],
-    links: [
-      { label: 'case study', icon: <Icon.book />, href: '#' },
-      { label: 'live', icon: <Icon.external />, href: '#' },
-    ],
+    name: 'raj-khan/pre-school-keyboard',
+    badge: 'public',
+    tagline: 'A playful browser typing game built for one child — large keys, voice feedback, emoji reactions.',
+    about: 'Built for my own kid. Each key press shows the character in large text, speaks it aloud, changes colors, and shows a friendly emoji. A small project that taught me a lot about input latency and audio cues.',
+    stack: ['TypeScript', 'Web Audio', 'React'],
+    links: [{ label: 'github', icon: <Icon.github />, href: 'https://github.com/raj-khan/pre-school-keyboard' }],
   },
   {
-    name: 'raj-khan/quick-memorial',
-    badge: 'side',
-    tagline: 'Generate beautiful memorial pages with QR-code sharing — in under five minutes.',
-    problem: 'Families want a digital place to gather memories; existing tools are slow, ugly, or paywalled.',
-    role: 'Solo build · product, design, full-stack, hosting',
-    impact: 'Free public templates, QR cards for graveside scanning, contributor messages without account creation.',
-    stack: ['Next.js', 'Tailwind', 'PostgreSQL', 'S3', 'QR'],
-    links: [{ label: 'live', icon: <Icon.external />, href: '#' }],
-  },
-  {
-    name: 'private/enterprise-systems',
-    badge: 'production',
-    tagline: 'Financial, HRM, and internal tools across multiple enterprise clients.',
-    problem: 'Enterprise teams stuck on legacy back-offices need modern web apps without ripping everything out.',
-    role: 'Full-stack lead · architecture, frontend, NestJS APIs, AWS, CI/CD, handoff',
-    impact: 'Shipped finance dashboards, HRM workflows, and internal admin tools running in production with real users.',
-    stack: ['React', 'NestJS', 'PostgreSQL', 'AWS ECS', 'Docker'],
-    links: [{ label: 'summary', icon: <Icon.book />, href: '#' }],
-  },
-  {
-    name: 'raj-khan/lab',
-    badge: 'experiment',
-    tagline: 'Public experiments — CLI scaffolds, agent recipes, dev-workflow probes.',
-    problem: 'Most AI-assisted patterns only show up after you\'ve shipped a few. So I keep shipping them.',
-    role: 'Hacking in public · weekly-ish',
-    impact: 'Small, opinionated repos that map directly to things I use in client work.',
-    stack: ['TypeScript', 'CLI', 'Claude', 'agentic'],
-    links: [{ label: 'github', icon: <Icon.github />, href: 'https://github.com/raj-khan' }],
+    name: 'raj-khan/meher-jq',
+    badge: 'public',
+    tagline: 'Command-line JSON processor — a jq-style tool written from scratch in C.',
+    about: 'Exploration of how jq-style streaming JSON filtering works under the hood — built for learning, not as a jq replacement.',
+    stack: ['C', 'CLI', 'JSON'],
+    links: [{ label: 'github', icon: <Icon.github />, href: 'https://github.com/raj-khan/meher-jq' }],
   },
 ]
 
@@ -94,12 +55,12 @@ export function Projects() {
             <span>build artifacts</span>
           </div>
           <h2 className="section-title">
-            Selected work — <em>proof, not portfolio.</em>
+            Public work — <em>code you can read.</em>
           </h2>
         </div>
         <p className="section-sub">
-          Six representative builds across products, client work, and open-source. Each one shipped
-          to real users.
+          A few open repos. Most client work is private — these are the projects with public code
+          to look at.
         </p>
       </div>
       <div className="projects-grid">
@@ -120,16 +81,8 @@ export function Projects() {
             </div>
             <div className="project-body">
               <div className="project-row">
-                <span className="k">problem</span>
-                <span className="v">{p.problem}</span>
-              </div>
-              <div className="project-row">
-                <span className="k">role</span>
-                <span className="v">{p.role}</span>
-              </div>
-              <div className="project-row">
-                <span className="k">impact</span>
-                <span className="v">{p.impact}</span>
+                <span className="k">about</span>
+                <span className="v">{p.about}</span>
               </div>
             </div>
             <div className="project-foot">
@@ -140,12 +93,7 @@ export function Projects() {
               </div>
               <div className="project-links">
                 {p.links.map((l, j) => (
-                  <a
-                    key={j}
-                    href={l.href}
-                    target={l.href.startsWith('http') ? '_blank' : undefined}
-                    rel="noopener"
-                  >
+                  <a key={j} href={l.href} target="_blank" rel="noopener">
                     {l.icon} {l.label}
                   </a>
                 ))}
