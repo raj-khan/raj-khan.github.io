@@ -3,60 +3,94 @@
 @tailwind utilities;
 
 /* ============================================================
-   Portfolio — design tokens (founder-focused rebrand)
+   Portfolio — design tokens
    ============================================================ */
 :root {
-  /* Neutrals — deep cool near-black with violet tint */
-  --bg: oklch(14% 0.012 270);
-  --bg-elev: oklch(17% 0.014 270);
-  --bg-card: oklch(19% 0.015 270);
-  --bg-card-hi: oklch(22% 0.017 270);
-  --border: oklch(28% 0.018 270);
-  --border-hi: oklch(36% 0.025 270);
-  --border-soft: oklch(24% 0.015 270);
+  /* Neutrals — deep warm-ink (a touch of warmth keeps it from feeling clinical) */
+  --bg: oklch(13% 0.014 280);
+  --bg-elev: oklch(17% 0.016 280);
+  --bg-card: oklch(20% 0.018 280);
+  --bg-card-hi: oklch(24% 0.020 280);
+  --border: oklch(30% 0.022 280);
+  --border-hi: oklch(40% 0.028 280);
+  --border-soft: oklch(25% 0.018 280);
+
+  /* Paper interlude (one section flips to a warm cream surface) */
+  --paper: oklch(96% 0.012 80);
+  --paper-elev: oklch(99% 0.008 80);
+  --paper-fg: oklch(22% 0.018 60);
+  --paper-mute: oklch(38% 0.020 60);
+  --paper-border: oklch(82% 0.022 70);
 
   /* Text */
-  --fg: oklch(96% 0.005 270);
-  --fg-mute: oklch(72% 0.012 270);
-  --fg-dim: oklch(55% 0.012 270);
-  --fg-faint: oklch(40% 0.012 270);
+  --fg: oklch(96% 0.006 80);
+  --fg-mute: oklch(74% 0.012 80);
+  --fg-dim: oklch(56% 0.012 80);
+  --fg-faint: oklch(42% 0.012 80);
 
-  /* Accents */
-  --accent: #b794ff;
-  --accent-hi: #d4baff;
-  --accent-soft: rgba(183, 148, 255, 0.14);
-  --accent-line: rgba(183, 148, 255, 0.32);
-  --accent-glow: rgba(183, 148, 255, 0.35);
+  /* Tri-accent system — used semantically across the site
+     · LIME  → build / ship / ok / primary accent
+     · AMBER → human judgment / warn / craft
+     · VIOLET→ AI / agentic / spec
+     Plus blue + coral for chrome and signal.
+  */
+  --lime: #9eff5e;
+  --lime-hi: #c4ff8a;
+  --lime-soft: rgba(158, 255, 94, 0.14);
+  --lime-line: rgba(158, 255, 94, 0.30);
+  --lime-glow: rgba(158, 255, 94, 0.32);
 
-  --green: #4ade80;
-  --green-soft: rgba(74, 222, 128, 0.12);
-  --amber: #fbbf24;
-  --amber-soft: rgba(251, 191, 36, 0.12);
-  --blue: #60a5fa;
-  --blue-soft: rgba(96, 165, 250, 0.12);
-  --red: #f87171;
-  --red-soft: rgba(248, 113, 113, 0.12);
+  --amber: #ffb454;
+  --amber-hi: #ffd089;
+  --amber-soft: rgba(255, 180, 84, 0.14);
+  --amber-line: rgba(255, 180, 84, 0.30);
 
+  --violet: #b794ff;
+  --violet-hi: #d4baff;
+  --violet-soft: rgba(183, 148, 255, 0.14);
+  --violet-line: rgba(183, 148, 255, 0.30);
+
+  --blue: #6db5ff;
+  --blue-soft: rgba(109, 181, 255, 0.12);
+  --coral: #ff8a5b;
+  --coral-soft: rgba(255, 138, 91, 0.12);
+  --red: #ff6b6b;
+  --red-soft: rgba(255, 107, 107, 0.12);
+  --green: var(--lime);
+  --green-soft: var(--lime-soft);
+
+  /* Active accent — the Tweaks panel rewrites this so chrome that should
+     follow a single color (CTAs, borders, prompt) reads as one brand color. */
+  --accent: var(--lime);
+  --accent-hi: var(--lime-hi);
+  --accent-soft: var(--lime-soft);
+  --accent-line: var(--lime-line);
+  --accent-glow: var(--lime-glow);
+
+  /* Type */
   --font-sans: "Geist", "Inter", system-ui, -apple-system, sans-serif;
   --font-mono: "Geist Mono", "JetBrains Mono", ui-monospace, monospace;
 
+  /* Radii */
   --r-sm: 6px;
   --r-md: 10px;
   --r-lg: 14px;
   --r-xl: 20px;
 
+  /* Layout */
   --max: 1240px;
   --pad-x: clamp(20px, 5vw, 56px);
 }
 
-/* Reset + base */
+/* ============================================================
+   Reset + base
+   ============================================================ */
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
 html, body { margin: 0; padding: 0; }
 body {
-  background: var(--bg) !important;
-  color: var(--fg) !important;
-  font-family: var(--font-sans) !important;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
   font-feature-settings: "ss01", "cv11";
   font-size: 16px;
   line-height: 1.5;
@@ -78,31 +112,42 @@ body::before {
   z-index: 0;
 }
 
-/* Soft top glow */
+/* Soft top glow — two-tone (lime + violet) for a richer ambient field */
 body::after {
   content: "";
   position: fixed;
-  top: -300px;
+  top: -340px;
   left: 50%;
   transform: translateX(-50%);
-  width: 1200px;
-  height: 600px;
-  background: radial-gradient(ellipse at center, var(--accent-soft) 0%, transparent 60%);
+  width: 1400px;
+  height: 720px;
+  background:
+    radial-gradient(ellipse 60% 70% at 35% 50%, var(--lime-soft) 0%, transparent 65%),
+    radial-gradient(ellipse 50% 60% at 70% 40%, var(--violet-soft) 0%, transparent 65%);
   filter: blur(40px);
   pointer-events: none;
   z-index: 0;
-  opacity: 0.6;
+  opacity: 0.7;
 }
 
 a { color: inherit; text-decoration: none; }
 button { font-family: inherit; cursor: pointer; }
 ::selection { background: var(--accent-soft); color: var(--accent-hi); }
 
+/* Defensive SVG sizing \u2014 unconstrained inline SVGs render at 300\u00d7150 in flex
+   layouts and break the page. Cap them to a sensible default unless a parent
+   explicitly sizes them. */
+svg { width: 1em; height: 1em; flex: none; display: inline-block; vertical-align: middle; }
+.btn svg, .gh-bar > svg, .agent-icon svg, .skill-head .ico svg, .service-ico svg,
+.channel-ico svg, .nav-search svg, .cp-input-row > svg, .cp-ico svg,
+.project-folder svg, .writing-row .arrow svg, .hero-cta svg { width: 16px; height: 16px; }
+.term-tab svg { width: 12px; height: 12px; }
+
 /* ============================================================
    Layout primitives
    ============================================================ */
 .app { position: relative; z-index: 1; }
-.container-x {
+.container {
   max-width: var(--max);
   margin: 0 auto;
   padding: 0 var(--pad-x);
@@ -135,6 +180,47 @@ button { font-family: inherit; cursor: pointer; }
   box-shadow: 0 0 12px var(--accent-glow);
 }
 .section-eyebrow .num { color: var(--fg-faint); }
+
+/* Per-section accent rotation \u2014 each numbered section header reads in a
+   different signature color so the page has visual rhythm even though every
+   section shares the same dark surface. The active --accent (lime by default,
+   configurable via Tweaks) still drives buttons, links, and primary chrome \u2014
+   these rules just colour the eyebrow + section dot. */
+main > section:nth-of-type(2) .section-eyebrow .num,
+main > section:nth-of-type(2) .section-title em { color: var(--lime-hi); }
+main > section:nth-of-type(2) .section-eyebrow .dot { background: var(--lime); box-shadow: 0 0 12px var(--lime-glow); }
+
+main > section:nth-of-type(3) .section-eyebrow .num,
+main > section:nth-of-type(3) .section-title em { color: var(--blue); }
+main > section:nth-of-type(3) .section-eyebrow .dot { background: var(--blue); box-shadow: 0 0 12px rgba(109,181,255,0.42); }
+
+main > section:nth-of-type(4) .section-eyebrow .num,
+main > section:nth-of-type(4) .section-title em { color: var(--violet-hi); }
+main > section:nth-of-type(4) .section-eyebrow .dot { background: var(--violet); box-shadow: 0 0 12px rgba(183,148,255,0.42); }
+
+main > section:nth-of-type(5) .section-eyebrow .num,
+main > section:nth-of-type(5) .section-title em { color: var(--amber-hi); }
+main > section:nth-of-type(5) .section-eyebrow .dot { background: var(--amber); box-shadow: 0 0 12px rgba(255,180,84,0.42); }
+
+main > section:nth-of-type(6) .section-eyebrow .num,
+main > section:nth-of-type(6) .section-title em { color: var(--coral); }
+main > section:nth-of-type(6) .section-eyebrow .dot { background: var(--coral); box-shadow: 0 0 12px rgba(255,138,91,0.42); }
+
+main > section:nth-of-type(7) .section-eyebrow .num,
+main > section:nth-of-type(7) .section-title em { color: var(--lime-hi); }
+main > section:nth-of-type(7) .section-eyebrow .dot { background: var(--lime); box-shadow: 0 0 12px var(--lime-glow); }
+
+main > section:nth-of-type(8) .section-eyebrow .num,
+main > section:nth-of-type(8) .section-title em { color: var(--violet-hi); }
+main > section:nth-of-type(8) .section-eyebrow .dot { background: var(--violet); box-shadow: 0 0 12px rgba(183,148,255,0.42); }
+
+main > section:nth-of-type(9) .section-eyebrow .num,
+main > section:nth-of-type(9) .section-title em { color: var(--lime-hi); }
+main > section:nth-of-type(9) .section-eyebrow .dot { background: var(--lime); box-shadow: 0 0 12px var(--lime-glow); }
+
+main > section:nth-of-type(10) .section-eyebrow .num,
+main > section:nth-of-type(10) .section-title em { color: var(--blue); }
+main > section:nth-of-type(10) .section-eyebrow .dot { background: var(--blue); box-shadow: 0 0 12px rgba(109,181,255,0.42); }
 .section-title {
   font-size: clamp(28px, 4vw, 44px);
   font-weight: 500;
@@ -172,7 +258,6 @@ button { font-family: inherit; cursor: pointer; }
   transition: all 160ms ease;
   font-family: var(--font-sans);
   white-space: nowrap;
-  cursor: pointer;
 }
 .btn .kbd {
   font-family: var(--font-mono);
@@ -261,7 +346,6 @@ button { font-family: inherit; cursor: pointer; }
   border-radius: 6px;
   color: var(--fg-mute);
   transition: all 150ms ease;
-  cursor: pointer;
 }
 .nav-links a:hover { color: var(--fg); background: var(--bg-card); }
 
@@ -278,7 +362,6 @@ button { font-family: inherit; cursor: pointer; }
   font-size: 12px;
   min-width: 240px;
   transition: all 150ms ease;
-  cursor: pointer;
 }
 .nav-search:hover { border-color: var(--border-hi); color: var(--fg-mute); }
 .nav-search .kbd {
@@ -344,7 +427,6 @@ button { font-family: inherit; cursor: pointer; }
   line-height: 1.02;
   margin: 0 0 24px;
   text-wrap: balance;
-  color: var(--fg);
 }
 .hero h1 .accent {
   color: var(--accent);
@@ -489,7 +571,9 @@ button { font-family: inherit; cursor: pointer; }
   text-transform: uppercase;
 }
 
-/* Problems */
+/* ============================================================
+   Founder problems
+   ============================================================ */
 .problems-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -541,7 +625,6 @@ button { font-family: inherit; cursor: pointer; }
   margin: 0 0 10px;
   letter-spacing: -0.01em;
   line-height: 1.3;
-  color: var(--fg);
 }
 .problem-a {
   color: var(--fg-mute);
@@ -564,7 +647,9 @@ button { font-family: inherit; cursor: pointer; }
   color: var(--fg-mute);
 }
 
-/* Pipeline */
+/* ============================================================
+   Process pipeline
+   ============================================================ */
 .pipeline {
   border: 1px solid var(--border);
   border-radius: var(--r-lg);
@@ -628,6 +713,18 @@ button { font-family: inherit; cursor: pointer; }
   margin: 0;
   line-height: 1.5;
 }
+.pipe-step .arrow {
+  position: absolute;
+  right: -7px; top: 50%;
+  transform: translateY(-50%);
+  width: 14px; height: 14px;
+  background: var(--bg-card);
+  border-top: 1px solid var(--border-soft);
+  border-right: 1px solid var(--border-soft);
+  transform: translateY(-50%) rotate(45deg);
+  z-index: 1;
+}
+.pipe-step:last-child .arrow { display: none; }
 
 .pipeline-log {
   padding: 16px 20px;
@@ -645,7 +742,9 @@ button { font-family: inherit; cursor: pointer; }
 .pipeline-log .tag.warn { color: var(--amber); }
 .pipeline-log .msg { color: var(--fg-mute); }
 
-/* Agentic */
+/* ============================================================
+   Agentic
+   ============================================================ */
 .agentic-grid {
   display: grid;
   grid-template-columns: 1.2fr 1fr;
@@ -657,7 +756,8 @@ button { font-family: inherit; cursor: pointer; }
 .agent-flow {
   border: 1px solid var(--border);
   border-radius: var(--r-lg);
-  background: linear-gradient(180deg, var(--bg-card) 0%, oklch(17% 0.014 270) 100%);
+  background:
+    linear-gradient(180deg, var(--bg-card) 0%, oklch(17% 0.014 270) 100%);
   padding: 28px;
   display: flex;
   flex-direction: column;
@@ -743,7 +843,6 @@ button { font-family: inherit; cursor: pointer; }
   margin: 0 0 16px;
   letter-spacing: -0.015em;
   line-height: 1.2;
-  color: var(--fg);
 }
 .agent-copy p {
   color: var(--fg-mute);
@@ -772,7 +871,9 @@ button { font-family: inherit; cursor: pointer; }
 }
 .agent-principle strong { color: var(--fg); font-weight: 500; }
 
-/* Services */
+/* ============================================================
+   Services
+   ============================================================ */
 .services-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -807,7 +908,6 @@ button { font-family: inherit; cursor: pointer; }
   font-weight: 500;
   margin: 0 0 8px;
   letter-spacing: -0.005em;
-  color: var(--fg);
 }
 .service p {
   margin: 0;
@@ -816,7 +916,9 @@ button { font-family: inherit; cursor: pointer; }
   line-height: 1.55;
 }
 
-/* Projects */
+/* ============================================================
+   Projects
+   ============================================================ */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -948,7 +1050,9 @@ button { font-family: inherit; cursor: pointer; }
 .project-links a:hover { color: var(--accent); }
 .project-links svg { width: 13px; height: 13px; }
 
-/* Experience */
+/* ============================================================
+   Experience
+   ============================================================ */
 .experience-grid {
   display: grid;
   grid-template-columns: 1fr 1.5fr;
@@ -1024,7 +1128,9 @@ button { font-family: inherit; cursor: pointer; }
   .mission-row .status { justify-self: start; }
 }
 
-/* Skills */
+/* ============================================================
+   Skills
+   ============================================================ */
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1074,7 +1180,9 @@ button { font-family: inherit; cursor: pointer; }
   color: var(--fg-mute);
 }
 
-/* GitHub */
+/* ============================================================
+   GitHub dashboard
+   ============================================================ */
 .gh-card {
   border: 1px solid var(--border);
   border-radius: var(--r-lg);
@@ -1109,10 +1217,10 @@ button { font-family: inherit; cursor: pointer; }
   border-radius: 2px;
   background: oklch(22% 0.013 270);
 }
-.gh-cell.l1 { background: rgba(183, 148, 255, 0.25); }
-.gh-cell.l2 { background: rgba(183, 148, 255, 0.5); }
-.gh-cell.l3 { background: rgba(183, 148, 255, 0.75); }
-.gh-cell.l4 { background: var(--accent); }
+.gh-cell.l1 { background: rgba(158, 255, 94, 0.22); }
+.gh-cell.l2 { background: rgba(158, 255, 94, 0.45); }
+.gh-cell.l3 { background: rgba(158, 255, 94, 0.72); }
+.gh-cell.l4 { background: var(--lime); box-shadow: 0 0 6px rgba(158, 255, 94, 0.4); }
 .gh-graph-meta {
   display: flex;
   justify-content: space-between;
@@ -1152,6 +1260,7 @@ button { font-family: inherit; cursor: pointer; }
   font-size: 13px;
   margin-bottom: 6px;
 }
+.gh-repo-name svg { width: 14px; height: 14px; flex: none; }
 .gh-repo-name .pub {
   margin-left: auto;
   font-size: 10px;
@@ -1187,8 +1296,13 @@ button { font-family: inherit; cursor: pointer; }
 .gh-repo-meta span { display: flex; align-items: center; gap: 4px; }
 .gh-repo-meta svg { width: 11px; height: 11px; }
 
-/* Writing */
-.writing-list { display: flex; flex-direction: column; }
+/* ============================================================
+   Writing
+   ============================================================ */
+.writing-list {
+  display: flex;
+  flex-direction: column;
+}
 .writing-row {
   display: grid;
   grid-template-columns: 100px 1fr auto;
@@ -1210,7 +1324,6 @@ button { font-family: inherit; cursor: pointer; }
   font-weight: 500;
   letter-spacing: -0.01em;
   margin: 0 0 4px;
-  color: var(--fg);
 }
 .writing-row .meta {
   font-family: var(--font-mono);
@@ -1219,7 +1332,7 @@ button { font-family: inherit; cursor: pointer; }
   display: flex; gap: 14px;
 }
 .writing-row .meta .tag { color: var(--accent); }
-.writing-row .arrow-btn {
+.writing-row .arrow {
   width: 32px; height: 32px;
   border: 1px solid var(--border);
   border-radius: 50%;
@@ -1228,19 +1341,21 @@ button { font-family: inherit; cursor: pointer; }
   color: var(--fg-mute);
   transition: all 200ms ease;
 }
-.writing-row:hover .arrow-btn {
+.writing-row:hover .arrow {
   border-color: var(--accent);
   color: var(--accent);
   transform: rotate(-45deg);
 }
-.writing-row .arrow-btn svg { width: 14px; height: 14px; }
+.writing-row .arrow svg { width: 14px; height: 14px; }
 
 @media (max-width: 640px) {
   .writing-row { grid-template-columns: 1fr; gap: 6px; }
-  .writing-row .arrow-btn { display: none; }
+  .writing-row .arrow { display: none; }
 }
 
-/* Contact */
+/* ============================================================
+   Contact
+   ============================================================ */
 .contact {
   padding: clamp(72px, 10vw, 120px) 0;
   position: relative;
@@ -1284,7 +1399,6 @@ button { font-family: inherit; cursor: pointer; }
   margin: 0 0 20px;
   max-width: 720px;
   text-wrap: balance;
-  color: var(--fg);
 }
 .contact h2 em { color: var(--accent); font-style: normal; }
 .contact-sub {
@@ -1342,7 +1456,9 @@ button { font-family: inherit; cursor: pointer; }
   font-weight: 500;
 }
 
-/* Footer */
+/* ============================================================
+   Footer
+   ============================================================ */
 .foot {
   padding: 40px 0 56px;
   border-top: 1px solid var(--border-soft);
@@ -1365,7 +1481,9 @@ button { font-family: inherit; cursor: pointer; }
   box-shadow: 0 0 8px var(--green);
 }
 
-/* Command Palette */
+/* ============================================================
+   Command Palette
+   ============================================================ */
 .cp-backdrop {
   position: fixed;
   inset: 0;
@@ -1465,7 +1583,9 @@ button { font-family: inherit; cursor: pointer; }
   margin: 0 3px;
 }
 
-/* Reveal on scroll */
+/* ============================================================
+   Reveal on scroll
+   ============================================================ */
 .reveal {
   opacity: 0;
   transform: translateY(20px);
@@ -1475,9 +1595,3 @@ button { font-family: inherit; cursor: pointer; }
   opacity: 1;
   transform: none;
 }
-
-/* Scrollbar */
-::-webkit-scrollbar { width: 10px; height: 10px; }
-::-webkit-scrollbar-track { background: var(--bg); }
-::-webkit-scrollbar-thumb { background: var(--border-hi); border-radius: 5px; }
-::-webkit-scrollbar-thumb:hover { background: var(--accent-line); }

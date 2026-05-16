@@ -1,99 +1,77 @@
+type Problem = {
+  issue: string
+  state: string
+  q: string
+  a: string
+  tags: string[]
+}
+
+const PROBLEMS: Problem[] = [
+  {
+    issue: 'ISSUE-001',
+    state: 'open',
+    q: 'You have an idea but no technical roadmap.',
+    a: 'I turn rough product concepts into clear specs, system architecture, and an MVP plan you can actually ship — without 6 weeks of slideware.',
+    tags: ['discovery', 'specs', 'architecture'],
+  },
+  {
+    issue: 'ISSUE-002',
+    state: 'open',
+    q: 'Your MVP is slow, messy, or hard to extend.',
+    a: 'I refactor full-stack codebases, stabilise CI/CD, fix the data model, and bring the system back into a state where adding features is fast again.',
+    tags: ['refactor', 'stability', 'speed'],
+  },
+  {
+    issue: 'ISSUE-003',
+    state: 'open',
+    q: 'You need someone who can own the whole build.',
+    a: "Frontend, backend, database, cloud, auth, deploy, monitoring — one technical partner instead of coordinating three contractors who don’t talk to each other.",
+    tags: ['full-stack', 'ownership', 'delivery'],
+  },
+  {
+    issue: 'ISSUE-004',
+    state: 'open',
+    q: 'You want AI leverage without AI chaos.',
+    a: "I use Claude, Cursor, and agent CLIs daily — but every output gets reviewed, tested, and architected by a human who’s been shipping for 8 years.",
+    tags: ['ai-assisted', 'review', 'judgment'],
+  },
+]
+
 export function FounderProblems() {
   return (
-    <section className="section" id="founder-problems">
-      <div className="container-x">
-        <div className="section-head reveal">
-          <div>
-            <div className="section-eyebrow">
-              <span className="dot" aria-hidden="true"></span>
-              <span className="num">01</span>
-              <span>where I help most</span>
-            </div>
-            <h2 className="section-title">
-              Problems founders bring me <em>&mdash; and how I solve them.</em>
-            </h2>
+    <section className="section container reveal" id="work">
+      <div className="section-head">
+        <div>
+          <div className="section-eyebrow">
+            <span className="num">01 /</span> <span className="dot"></span>{' '}
+            <span>where i help most</span>
           </div>
-          <p className="section-sub">
-            You don&apos;t need another contractor who only writes code. You
-            need a technical partner who can think with you about
-            product, architecture, and delivery.
-          </p>
+          <h2 className="section-title">The four problems I get hired to solve.</h2>
         </div>
-
-        <div className="problems-grid reveal">
-          <article className="problem">
+        <p className="section-sub">
+          Most founders I work with land on one of these. If any sound familiar, we should talk.
+        </p>
+      </div>
+      <div className="problems-grid">
+        {PROBLEMS.map((p, i) => (
+          <div className="problem" key={i}>
             <div className="problem-issue">
-              <span className="badge">ISSUE #01</span>
-              <span>no technical roadmap</span>
+              <span>{p.issue}</span>
+              <span className="badge">{p.state}</span>
+              <span style={{ marginLeft: 'auto' }}>· assigned: @meher</span>
             </div>
-            <h3 className="problem-q">You have a clear idea, but no path to a working product.</h3>
-            <p className="problem-a">
-              I translate fuzzy product ideas into developer-ready
-              requirements, an architecture sketch, and an honest delivery
-              plan you can ship from.
-            </p>
+            <h3 className="problem-q">{p.q}</h3>
+            <p className="problem-a">{p.a}</p>
             <div className="problem-tags">
-              <span className="problem-tag">discovery</span>
-              <span className="problem-tag">spec</span>
-              <span className="problem-tag">roadmap</span>
+              {p.tags.map((t) => (
+                <span className="problem-tag" key={t}>
+                  {t}
+                </span>
+              ))}
             </div>
-          </article>
-
-          <article className="problem">
-            <div className="problem-issue">
-              <span className="badge">ISSUE #02</span>
-              <span>messy MVP</span>
-            </div>
-            <h3 className="problem-q">Your MVP works, but it&apos;s slow, fragile, or hard to extend.</h3>
-            <p className="problem-a">
-              I stabilize and refactor full-stack apps &mdash; database, APIs,
-              frontend &mdash; so you can grow on top of them instead of around
-              them.
-            </p>
-            <div className="problem-tags">
-              <span className="problem-tag">refactor</span>
-              <span className="problem-tag">performance</span>
-              <span className="problem-tag">postgres</span>
-            </div>
-          </article>
-
-          <article className="problem">
-            <div className="problem-issue">
-              <span className="badge">ISSUE #03</span>
-              <span>fractured ownership</span>
-            </div>
-            <h3 className="problem-q">You need one person who can own the whole build.</h3>
-            <p className="problem-a">
-              Frontend, backend, cloud, CI/CD, product decisions &mdash; I run
-              the whole stack so you don&apos;t have to coordinate five
-              vendors to ship one feature.
-            </p>
-            <div className="problem-tags">
-              <span className="problem-tag">full-stack</span>
-              <span className="problem-tag">aws</span>
-              <span className="problem-tag">ci/cd</span>
-            </div>
-          </article>
-
-          <article className="problem">
-            <div className="problem-issue">
-              <span className="badge">ISSUE #04</span>
-              <span>AI without chaos</span>
-            </div>
-            <h3 className="problem-q">You want to use AI without shipping broken code.</h3>
-            <p className="problem-a">
-              I use agents and CLI workflows for speed, but with review,
-              testing, and engineering judgment in the loop. AI is
-              leverage &mdash; not a substitute for ownership.
-            </p>
-            <div className="problem-tags">
-              <span className="problem-tag">agents</span>
-              <span className="problem-tag">review</span>
-              <span className="problem-tag">testing</span>
-            </div>
-          </article>
-        </div>
+          </div>
+        ))}
       </div>
     </section>
-  );
+  )
 }

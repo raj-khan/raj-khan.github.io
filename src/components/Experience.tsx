@@ -1,97 +1,65 @@
+const STATS = [
+  { num: '8', small: '+ yrs', label: 'shipping production code' },
+  { num: '30', small: '+', label: 'products & features in production' },
+  { num: '12', small: '', label: 'enterprise & client teams' },
+  { num: '5', small: '+', label: 'open-source projects maintained' },
+]
+
+const MISSIONS = [
+  { when: '2023 — now', what: 'Full-stack engineer', where: 'Snappymob · Kuala Lumpur', status: 'active' },
+  { when: '2020 — 2023', what: 'Senior software engineer', where: 'Enterprise SaaS & financial systems', status: 'done' },
+  { when: '2018 — 2020', what: 'Full-stack engineer', where: 'Product & client work, MVPs & dashboards', status: 'done' },
+  { when: '2017 — 2018', what: 'Software engineer', where: 'Backend services & integrations', status: 'done' },
+  { when: 'Ongoing', what: 'Independent / open-source', where: 'aiagentflow, e2spec, dev-workflow tooling', status: 'active' },
+]
+
 export function Experience() {
-	return (
-		<section className="section" id="experience">
-			<div className="container-x">
-				<div className="section-head reveal">
-					<div>
-						<div className="section-eyebrow">
-							<span className="dot"></span>
-							<span className="num">06</span>
-							<span>mission log</span>
-						</div>
-						<h2 className="section-title">
-							Eight years of{" "}
-							<em>shipping software in production.</em>
-						</h2>
-					</div>
-					<p className="section-sub">
-						Enterprise systems, SaaS products, and internal tools — owned
-						end-to-end across frontend, backend, and infrastructure.
-					</p>
-				</div>
-
-				<div className="experience-grid">
-					<div className="stats-grid reveal">
-						<div className="stat">
-							<div className="stat-num">
-								8<span className="small">+</span>
-							</div>
-							<div className="stat-label">years shipping</div>
-						</div>
-						<div className="stat">
-							<div className="stat-num">
-								40<span className="small">%</span>
-							</div>
-							<div className="stat-label">
-								response-time gain · scaling work
-							</div>
-						</div>
-						<div className="stat">
-							<div className="stat-num">4</div>
-							<div className="stat-label">production stacks owned</div>
-						</div>
-						<div className="stat">
-							<div className="stat-num">0</div>
-							<div className="stat-label">
-								days of prod downtime · post-scaling
-							</div>
-						</div>
-					</div>
-
-					<div className="mission-log reveal">
-						<div className="mission-row">
-							<span className="when">2022 — now</span>
-							<span className="what">
-								<strong>Senior Software Engineer</strong>
-								<span className="where">
-									Snappymob · Kuala Lumpur, Malaysia
-								</span>
-							</span>
-							<span className="status status-active">Active</span>
-						</div>
-						<div className="mission-row">
-							<span className="when">2022</span>
-							<span className="what">
-								<strong>PHP Developer</strong>
-								<span className="where">
-									Wipro Bangladesh Limited · Dhaka
-								</span>
-							</span>
-							<span className="status status-done">Done</span>
-						</div>
-						<div className="mission-row">
-							<span className="when">2019 — 2022</span>
-							<span className="what">
-								<strong>Software Developer</strong>
-								<span className="where">
-									SCT-Bangla Limited · Dhaka
-								</span>
-							</span>
-							<span className="status status-done">Done</span>
-						</div>
-						<div className="mission-row">
-							<span className="when">2017 — 2019</span>
-							<span className="what">
-								<strong>Full-Stack Web Developer</strong>
-								<span className="where">
-									Bangladesh Software Development (BSD) · Dhaka
-								</span>
-							</span>
-							<span className="status status-done">Done</span>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-	);
+  return (
+    <section className="section container reveal">
+      <div className="section-head">
+        <div>
+          <div className="section-eyebrow">
+            <span className="num">06 /</span> <span className="dot"></span>{' '}
+            <span>mission log</span>
+          </div>
+          <h2 className="section-title">
+            Eight years. <em>Real production. Real users.</em>
+          </h2>
+        </div>
+        <p className="section-sub">
+          No bootcamps, no buzzword resumes. Just shipped systems that customers paid for or relied
+          on.
+        </p>
+      </div>
+      <div className="experience-grid">
+        <div>
+          <div className="stats-grid">
+            {STATS.map((s, i) => (
+              <div className="stat" key={i}>
+                <div className="stat-num">
+                  {s.num}
+                  <span className="small">{s.small}</span>
+                </div>
+                <div className="stat-label">{s.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="mission-log">
+          {MISSIONS.map((m, i) => (
+            <div className="mission-row" key={i}>
+              <div className="when">{m.when}</div>
+              <div className="what">
+                <strong>{m.what}</strong>
+                <span className="where">{m.where}</span>
+              </div>
+              <div className={'status status-' + m.status}>
+                {m.status === 'active' ? '● active' : '○ shipped'}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
 }

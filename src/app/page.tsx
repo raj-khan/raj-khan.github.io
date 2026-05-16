@@ -7,7 +7,7 @@ import { Projects } from '@/components/Projects'
 import { Experience } from '@/components/Experience'
 import { Skills } from '@/components/Skills'
 import { GitHubDashboard } from '@/components/GitHubDashboard'
-import { BlogPreview } from '@/components/BlogPreview'
+import { Writing } from '@/components/Writing'
 import { Contact } from '@/components/Contact'
 
 export default function Home() {
@@ -22,7 +22,7 @@ export default function Home() {
       <Experience />
       <Skills />
       <GitHubDashboard />
-      <BlogPreview />
+      <Writing />
       <Contact />
     </main>
   )

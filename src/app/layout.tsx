@@ -3,6 +3,7 @@ import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { CommandPalette } from "@/components/CommandPalette";
+import { RevealObserver } from "@/components/RevealObserver";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://meherullah.dev/";
 const siteName = "Md Meher Ullah - AI-Augmented Software Engineer";
@@ -111,6 +112,7 @@ export default function RootLayout({
 					<Footer />
 				</div>
 				<CommandPalette />
+				<RevealObserver />
 			</body>
 		</html>
 	);

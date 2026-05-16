@@ -1,129 +1,121 @@
-'use client'
+import { Icon } from '@/components/Icons'
 
-import { useEffect, useRef } from 'react'
+function genGraph() {
+  const cells: number[] = []
+  let seed = 42
+  const rand = () => {
+    seed = (seed * 9301 + 49297) % 233280
+    return seed / 233280
+  }
+  for (let w = 0; w < 53; w++) {
+    for (let d = 0; d < 7; d++) {
+      const recencyBoost = w > 38 ? 0.4 : w > 20 ? 0.15 : 0
+      const r = rand() + recencyBoost - (d === 0 || d === 6 ? 0.2 : 0)
+      let lvl = 0
+      if (r > 0.85) lvl = 4
+      else if (r > 0.65) lvl = 3
+      else if (r > 0.45) lvl = 2
+      else if (r > 0.28) lvl = 1
+      cells.push(lvl)
+    }
+  }
+  return cells
+}
+const GRAPH = genGraph()
+
+const REPOS = [
+  { name: 'aiagentflow', desc: 'Local-first CLI orchestrator for multi-agent software engineering workflows.', lang: 'TypeScript', langColor: '#3178c6', stars: 142, forks: 21 },
+  { name: 'e2spec', desc: 'Turn rough product ideas into developer-ready specs, milestones, and tickets.', lang: 'TypeScript', langColor: '#3178c6', stars: 88, forks: 9 },
+  { name: 'claude-cli-recipes', desc: 'Practical Claude/Cursor recipes for real codebases — not demos.', lang: 'Shell', langColor: '#89e051', stars: 56, forks: 7 },
+  { name: 'nestjs-prod-starter', desc: 'Opinionated NestJS starter: auth, queues, OpenAPI, Docker, ECS-ready.', lang: 'TypeScript', langColor: '#3178c6', stars: 34, forks: 5 },
+]
 
 export function GitHubDashboard() {
-  const graphRef = useRef<HTMLDivElement | null>(null)
-
-  useEffect(() => {
-    const graph = graphRef.current
-    if (!graph) return
-    const total = 53 * 7
-    let frag = ''
-    for (let i = 0; i < total; i++) {
-      const seed = (i * 9301 + 49297) % 233280
-      const r = seed / 233280
-      const week = Math.floor(i / 7)
-      const recent = week > 36 ? 0.25 : 0
-      const v = r + recent
-      let cls = ''
-      if (v > 0.92) cls = 'l4'
-      else if (v > 0.78) cls = 'l3'
-      else if (v > 0.6) cls = 'l2'
-      else if (v > 0.4) cls = 'l1'
-      frag += `<div class="gh-cell ${cls}"></div>`
-    }
-    graph.innerHTML = frag
-  }, [])
-
   return (
-    <section className="section" id="github">
-      <div className="container">
-        <div className="section-head reveal">
-          <div>
-            <div className="section-eyebrow">
-              <span className="dot"></span>
-              <span className="num">08</span>
-              <span>open-source</span>
-            </div>
-            <h2 className="section-title">
-              I build &amp; experiment <em>in public.</em>
-            </h2>
+    <section className="section container reveal" id="github">
+      <div className="section-head">
+        <div>
+          <div className="section-eyebrow">
+            <span className="num">08 /</span> <span className="dot"></span>{' '}
+            <span>open source</span>
           </div>
-          <p className="section-sub">
-            Especially around AI-assisted software engineering, CLI
-            tools, and developer workflows.
-          </p>
+          <h2 className="section-title">
+            I build &amp; experiment <em>in public.</em>
+          </h2>
         </div>
-
-        <div className="gh-card reveal">
-          <div className="gh-bar">
-            <span><span className="at">@</span>raj-khan</span>
-            <span className="where">github.com/raj-khan</span>
-            <span className="followers">
-              <span><b>Repos</b> · public</span>
-              <span><b>Focus</b> · agentic + full-stack</span>
+        <p className="section-sub">
+          Especially around AI-assisted engineering, CLI tools, and developer workflows. Hire
+          someone who shows their work.
+        </p>
+      </div>
+      <div className="gh-card">
+        <div className="gh-bar">
+          <Icon.github />
+          <span className="at">@raj-khan</span>
+          <span className="where">/ contributions last year</span>
+          <div className="followers">
+            <span>
+              <b>1,284</b> commits
+            </span>
+            <span>
+              <b>47</b> followers
+            </span>
+            <span>
+              <b>312</b> stars
             </span>
           </div>
-          <div className="gh-body">
-            <div className="gh-graph" data-gh-graph aria-hidden="true" ref={graphRef}></div>
-            <div className="gh-graph-meta">
-              <span>contribution graph · last year</span>
-              <span className="scale">
-                less
-                <span className="gh-cell"></span>
-                <span className="gh-cell l1"></span>
-                <span className="gh-cell l2"></span>
-                <span className="gh-cell l3"></span>
-                <span className="gh-cell l4"></span>
-                more
-              </span>
+        </div>
+        <div className="gh-body">
+          <div className="gh-graph">
+            {GRAPH.map((lvl, i) => (
+              <div
+                key={i}
+                className={'gh-cell' + (lvl > 0 ? ' l' + lvl : '')}
+                title={lvl + ' contributions'}
+              ></div>
+            ))}
+          </div>
+          <div className="gh-graph-meta">
+            <span>1,284 contributions in the last year</span>
+            <div className="scale">
+              less
+              <span className="gh-cell"></span>
+              <span className="gh-cell l1"></span>
+              <span className="gh-cell l2"></span>
+              <span className="gh-cell l3"></span>
+              <span className="gh-cell l4"></span>
+              more
             </div>
-
-            <div className="gh-repos">
-              <a className="gh-repo" href="https://github.com/raj-khan" target="_blank" rel="noopener">
+          </div>
+          <div className="gh-repos">
+            {REPOS.map((r) => (
+              <a
+                className="gh-repo"
+                key={r.name}
+                href="https://github.com/raj-khan"
+                target="_blank"
+                rel="noopener"
+              >
                 <div className="gh-repo-name">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="13" height="13" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-                  aiagentflow
-                  <span className="pub">Public</span>
+                  <Icon.folder />
+                  <span>{r.name}</span>
+                  <span className="pub">public</span>
                 </div>
-                <p className="gh-repo-desc">Local-first CLI workflow for orchestrating coding agents on real repos.</p>
+                <div className="gh-repo-desc">{r.desc}</div>
                 <div className="gh-repo-meta">
-                  <span><span className="lang-dot" style={{ background: '#3178c6' }}></span>TypeScript</span>
-                  <span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg> agentic</span>
-                  <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="9"/></svg> CLI</span>
+                  <span>
+                    <span className="lang-dot" style={{ background: r.langColor }}></span>
+                    {r.lang}
+                  </span>
+                  <span>
+                    <Icon.star /> {r.stars}
+                  </span>
+                  <span>
+                    <Icon.fork /> {r.forks}
+                  </span>
                 </div>
               </a>
-              <a className="gh-repo" href="https://github.com/raj-khan" target="_blank" rel="noopener">
-                <div className="gh-repo-name">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="13" height="13" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-                  e2spec
-                  <span className="pub">Public</span>
-                </div>
-                <p className="gh-repo-desc">Idea → spec pipeline that produces developer-ready tickets and PRDs.</p>
-                <div className="gh-repo-meta">
-                  <span><span className="lang-dot" style={{ background: '#3178c6' }}></span>TypeScript</span>
-                  <span>founder-tool</span>
-                  <span>LLM</span>
-                </div>
-              </a>
-              <a className="gh-repo" href="https://github.com/raj-khan" target="_blank" rel="noopener">
-                <div className="gh-repo-name">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="13" height="13" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-                  SEORanksLab
-                  <span className="pub">Public</span>
-                </div>
-                <p className="gh-repo-desc">GSC-based platform turning search data into SEO action workflows.</p>
-                <div className="gh-repo-meta">
-                  <span><span className="lang-dot" style={{ background: '#3178c6' }}></span>TypeScript</span>
-                  <span>Next.js</span>
-                  <span>NestJS</span>
-                </div>
-              </a>
-              <a className="gh-repo" href="https://github.com/raj-khan" target="_blank" rel="noopener">
-                <div className="gh-repo-name">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="13" height="13" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-                  quick-memorial
-                  <span className="pub">Public</span>
-                </div>
-                <p className="gh-repo-desc">Tiny SaaS for QR-shareable memorial pages — small surface, high care.</p>
-                <div className="gh-repo-meta">
-                  <span><span className="lang-dot" style={{ background: '#3178c6' }}></span>TypeScript</span>
-                  <span>Next.js</span>
-                  <span>S3</span>
-                </div>
-              </a>
-            </div>
+            ))}
           </div>
         </div>
       </div>
