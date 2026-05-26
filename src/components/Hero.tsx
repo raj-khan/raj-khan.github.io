@@ -87,7 +87,7 @@ function TerminalCard() {
         <span className="term-dot r"></span>
         <span className="term-dot y"></span>
         <span className="term-dot g"></span>
-        <span className="term-title">~/build — zsh — 80×24</span>
+        <span className="term-title">~/build · zsh · 80×24</span>
       </div>
       <div className="term-tabs">
         <div className="term-tab active">

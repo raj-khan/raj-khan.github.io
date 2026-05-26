@@ -3,10 +3,10 @@ const STATS = [
 ]
 
 const MISSIONS = [
-  { when: '2022 — now', what: 'Senior Software Engineer', where: 'Snappymob · Kuala Lumpur, Malaysia', status: 'active' },
+  { when: '2022 - now', what: 'Senior Software Engineer', where: 'Snappymob · Kuala Lumpur, Malaysia', status: 'active' },
   { when: '2022', what: 'PHP Developer', where: 'Wipro Bangladesh Limited · Dhaka', status: 'done' },
-  { when: '2019 — 2022', what: 'Software Developer', where: 'SCT-Bangla Limited · Dhaka', status: 'done' },
-  { when: '2017 — 2019', what: 'Full-Stack Web Developer', where: 'Bangladesh Software Development (BSD) · Dhaka', status: 'done' },
+  { when: '2019 - 2022', what: 'Software Developer', where: 'SCT-Bangla Limited · Dhaka', status: 'done' },
+  { when: '2017 - 2019', what: 'Full-Stack Web Developer', where: 'Bangladesh Software Development (BSD) · Dhaka', status: 'done' },
 ]
 
 export function Experience() {
@@ -23,8 +23,7 @@ export function Experience() {
           </h2>
         </div>
         <p className="section-sub">
-          Enterprise systems, SaaS products, and internal tools — owned end-to-end across frontend,
-          backend, and infrastructure.
+          Enterprise systems, SaaS products, and internal tools. Frontend, backend, and infrastructure.
         </p>
       </div>
       <div className="experience-grid">
