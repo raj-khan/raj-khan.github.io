@@ -22,7 +22,7 @@ const TERM_SCRIPT: TermLine[] = [
   { kind: 'kv', k: 'leverage', v: 'AI agents + CLI automation', color: 'accent' },
   { kind: 'kv', k: 'judgment', v: 'senior engineer (human-owned)', color: 'amber' },
   { kind: 'blank' },
-  { kind: 'ok', text: '✓ production hardened — 8+ years shipping' },
+  { kind: 'ok', text: '✓ production hardened, 8+ years shipping' },
   { kind: 'blank' },
   { kind: 'comment', text: '# full-stack · KL, Malaysia · builder mindset' },
 ]
@@ -161,13 +161,13 @@ export function Hero() {
             <span>Senior Software Engineer · Full-stack · KL, MY</span>
           </div>
           <h1>
-            I build <span className="accent">production-ready software</span> —{' '}
-            <span className="ul">end-to-end, from idea to shipped.</span>
+            I build <span className="accent">production-ready software.</span>{' '}
+            <span className="ul">End-to-end, from idea to shipped.</span>
           </h1>
           <p className="hero-sub">
-            <strong>8+ years</strong> shipping scalable web apps, SaaS products, and AI workflows.
-            I work across the full stack — spec, architecture, backend, frontend, and deployment —
-            with the ownership mindset of someone who cares how the product actually lands.
+            <strong>8+ years</strong> shipping web apps, SaaS products, and AI tooling.
+            I work across the full stack: spec, architecture, backend, frontend, deployment.
+            I care about how the product lands, not just that the code runs.
           </p>
           <div className="hero-cta">
             <a className="btn btn-primary" href="#contact">

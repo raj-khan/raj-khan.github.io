@@ -1,14 +1,14 @@
 import { Icon } from '@/components/Icons'
 
 const SERVICES = [
-  { ico: <Icon.zap />, name: 'MVP development', desc: 'Idea → working product. 4–10 week sprints with weekly demos and a real launch at the end.' },
-  { ico: <Icon.layers />, name: 'SaaS product build', desc: 'Multi-tenant, billing, auth, dashboards. The non-glamorous backbone that paid SaaS needs.' },
-  { ico: <Icon.code />, name: 'Full-stack feature delivery', desc: 'Drop into an existing team and ship vertical slices — frontend, API, data, deploy.' },
-  { ico: <Icon.cpu />, name: 'Backend & API architecture', desc: 'Data model, contracts, jobs, queues. Designed to scale before scale is a problem.' },
-  { ico: <Icon.sparkle />, name: 'AI workflow integration', desc: 'Agents, RAG, CLI automation, prompt pipelines — integrated into your real codebase, not a demo.' },
-  { ico: <Icon.terminal />, name: 'Developer tooling & CLIs', desc: 'Internal tools, scripts, CLIs that make your team faster every week, not just once.' },
-  { ico: <Icon.target />, name: 'Technical planning', desc: 'Turning rough product ideas into engineering scope, milestones, and honest estimates.' },
-  { ico: <Icon.shield />, name: 'Production debugging', desc: 'Things on fire? I read logs, fix the root cause, and write the runbook so it doesn\'t repeat.' },
+  { ico: <Icon.zap />, name: 'MVP development', desc: 'Idea to working product. Weekly progress, real milestones, actual launch at the end.' },
+  { ico: <Icon.layers />, name: 'SaaS product build', desc: 'Multi-tenant, billing, auth, dashboards. The unglamorous backbone that paid SaaS actually needs.' },
+  { ico: <Icon.code />, name: 'Full-stack feature delivery', desc: 'Drop into an existing team and ship vertical slices: frontend, API, data, deploy.' },
+  { ico: <Icon.cpu />, name: 'Backend & API architecture', desc: 'Data model, contracts, jobs, queues. Built to scale before scale becomes the problem.' },
+  { ico: <Icon.sparkle />, name: 'AI workflow integration', desc: 'Agents, RAG, CLI automation, prompt pipelines. Integrated into a real codebase, not a demo.' },
+  { ico: <Icon.terminal />, name: 'Developer tooling & CLIs', desc: 'Internal tools, scripts, CLIs that save your team time every single week.' },
+  { ico: <Icon.target />, name: 'Technical planning', desc: 'Rough product idea turned into engineering scope, milestones, and honest estimates.' },
+  { ico: <Icon.shield />, name: 'Production debugging', desc: "Things on fire? I dig into logs, fix the root cause, and write the runbook so it doesn't happen again." },
 ]
 
 export function Services() {
@@ -23,7 +23,7 @@ export function Services() {
           <h2 className="section-title">Eight areas I focus on and enjoy building in.</h2>
         </div>
         <p className="section-sub">
-          These are the kinds of problems I work on day-to-day and explore in side projects — full-stack, AI workflows, and everything in between.
+          Things I work on daily and dig into in my own time. Full-stack, AI tooling, the whole build.
         </p>
       </div>
       <div className="services-grid">

@@ -22,7 +22,7 @@ export function Contact() {
           Building something interesting? <em>Let&apos;s talk.</em>
         </h2>
         <p className="contact-sub">
-          Whether it&apos;s a technical question, an interesting problem, or just a conversation about software and building things — I&apos;m always happy to connect.
+          Technical question, interesting problem, or just want to talk software. Drop me a line.
         </p>
         <div className="contact-actions">
           <a className="btn btn-primary" href="mailto:meherullah97@gmail.com">
