@@ -12,18 +12,17 @@ export function Contact() {
     <section className="contact container reveal" id="contact">
       <div className="contact-card">
         <div className="contact-prompt">
-          <span>$ founder contact --to meher</span>
+          <span>$ engineer contact --to meher</span>
           <span
             className="term-cursor"
             style={{ display: 'inline-block', width: 7, height: 13, background: 'var(--accent)', verticalAlign: -1 }}
           ></span>
         </div>
         <h2>
-          Got an idea you want to turn into <em>real software?</em>
+          Building something interesting? <em>Let&apos;s talk.</em>
         </h2>
         <p className="contact-sub">
-          If you&apos;re a founder, startup, or team with a product idea, an AI workflow problem,
-          or a build that&apos;s stalled — let&apos;s talk. I reply within a day, in your timezone.
+          Technical question, interesting problem, or just want to talk software. Drop me a line.
         </p>
         <div className="contact-actions">
           <a className="btn btn-primary" href="mailto:meherullah97@gmail.com">
