@@ -46,10 +46,10 @@ export function FounderProblems() {
             <span className="num">01 /</span> <span className="dot"></span>{' '}
             <span>where i help most</span>
           </div>
-          <h2 className="section-title">The four problems I get hired to solve.</h2>
+          <h2 className="section-title">Four problems I genuinely love solving.</h2>
         </div>
         <p className="section-sub">
-          Most founders I work with land on one of these. If any sound familiar, we should talk.
+          These are the engineering challenges I gravitate toward — whether at work, in side projects, or collaborating with builders.
         </p>
       </div>
       <div className="problems-grid">
@@ -58,7 +58,7 @@ export function FounderProblems() {
             <div className="problem-issue">
               <span>{p.issue}</span>
               <span className="badge">{p.state}</span>
-              <span style={{ marginLeft: 'auto' }}>· assigned: @meher</span>
+              <span style={{ marginLeft: 'auto' }}>· engineer: @meher</span>
             </div>
             <h3 className="problem-q">{p.q}</h3>
             <p className="problem-a">{p.a}</p>

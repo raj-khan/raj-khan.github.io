@@ -20,11 +20,10 @@ export function Services() {
             <span className="num">04 /</span> <span className="dot"></span>{' '}
             <span>how i can help</span>
           </div>
-          <h2 className="section-title">Eight ways founders &amp; teams hire me.</h2>
+          <h2 className="section-title">Eight areas I focus on and enjoy building in.</h2>
         </div>
         <p className="section-sub">
-          Most engagements blend a few of these. Some are 4-week projects, some are 6-month
-          embedded partnerships.
+          These are the kinds of problems I work on day-to-day and explore in side projects — full-stack, AI workflows, and everything in between.
         </p>
       </div>
       <div className="services-grid">
