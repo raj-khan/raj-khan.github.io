@@ -10,30 +10,30 @@ const PROBLEMS: Problem[] = [
   {
     issue: 'ISSUE-001',
     state: 'open',
-    q: 'You have an idea but no technical roadmap.',
-    a: 'I turn rough product concepts into clear specs, system architecture, and an MVP plan you can actually ship. No 6-week discovery process.',
-    tags: ['discovery', 'specs', 'architecture'],
+    q: 'Requirements exist but no one has turned them into a technical plan.',
+    a: 'I take written requirements, user stories, or rough notes and produce a real technical roadmap: data model, API design, infra decisions, milestones, and task breakdown. Something engineers can actually build from.',
+    tags: ['roadmap', 'specs', 'architecture'],
   },
   {
     issue: 'ISSUE-002',
     state: 'open',
-    q: 'Your MVP is slow, messy, or hard to extend.',
-    a: 'I refactor full-stack codebases, stabilise CI/CD, fix the data model, and get the system back to a place where adding features is fast again.',
-    tags: ['refactor', 'stability', 'speed'],
+    q: 'The existing codebase is too slow, brittle, or hard to extend.',
+    a: 'I dig into the code, find what is actually causing the problem, and fix it. Query performance, deployment pipeline, flaky data model, tight coupling. I refactor until adding a new feature does not feel like defusing a bomb.',
+    tags: ['refactor', 'performance', 'deployment'],
   },
   {
     issue: 'ISSUE-003',
     state: 'open',
-    q: 'You need someone who can own the whole build.',
-    a: "Frontend, backend, database, cloud, auth, deploy, monitoring. All of it in one place, not split across contractors who don't talk.",
-    tags: ['full-stack', 'ownership', 'delivery'],
+    q: 'Something needs to be built from scratch and shipped to production.',
+    a: 'I handle the whole thing. Architecture, backend, frontend, auth, database, CI/CD, deployment, monitoring. I have done this enough times to know where projects stall and how to avoid it.',
+    tags: ['full-stack', 'build', 'deployment'],
   },
   {
     issue: 'ISSUE-004',
     state: 'open',
-    q: 'You want AI leverage without AI chaos.',
-    a: "I use Claude, Cursor, and agent CLIs every day. Every output still gets reviewed, tested, and shaped by someone who has been shipping for 8 years.",
-    tags: ['ai-assisted', 'review', 'judgment'],
+    q: 'The team wants to use AI but is not sure how to do it properly.',
+    a: 'I work with Claude, Cursor, and agent tooling every day on real production code. I know what AI is good at, where it cuts corners, and how to set up workflows that make the whole team faster without creating a mess.',
+    tags: ['ai-tooling', 'workflow', 'code-quality'],
   },
 ]
 
@@ -46,10 +46,10 @@ export function FounderProblems() {
             <span className="num">01 /</span> <span className="dot"></span>{' '}
             <span>where i help most</span>
           </div>
-          <h2 className="section-title">Four problems I genuinely love solving.</h2>
+          <h2 className="section-title">Four things I do well and do often.</h2>
         </div>
         <p className="section-sub">
-          Problems I keep coming back to, at work and in my own builds.
+          Problems I run into constantly, at work and in side projects. I have good answers for all of them.
         </p>
       </div>
       <div className="problems-grid">

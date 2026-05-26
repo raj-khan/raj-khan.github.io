@@ -28,7 +28,7 @@ export function BuildProcess() {
             <span>build process</span>
           </div>
           <h2 className="section-title">
-            From idea to shipped product — <em>without skipping steps.</em>
+            From idea to shipped product. <em>No steps skipped.</em>
           </h2>
         </div>
         <p className="section-sub">

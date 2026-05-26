@@ -16,7 +16,7 @@ export function Writing() {
             <span>engineering notes</span>
           </div>
           <h2 className="section-title">
-            Writing — <em>practical, not promotional.</em>
+            Writing. <em>Practical, not promotional.</em>
           </h2>
         </div>
         <p className="section-sub">
