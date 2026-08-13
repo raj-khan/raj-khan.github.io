@@ -1,121 +1,138 @@
 import { Icon } from '@/components/Icons'
 
-type ProjectLink = { label: string; icon: React.ReactNode; href: string }
 type Project = {
-  name: string
-  badge: string
-  tagline: string
-  about: string
-  stack: string[]
-  links: ProjectLink[]
+  name: string;
+  href: string;
+  tagline: string;
+  stars: number;
+  lang: string;
+  langColor: string;
+  updated: string;
+  tags: string[];
 }
 
 const PROJECTS: Project[] = [
   {
-    name: 'aiagentflow/cli',
-    badge: 'open source',
-    tagline: 'CLI tool that orchestrates multi-agent AI workflows for software development.',
-    about: 'Command-line tool for running structured multi-agent pipelines. Handles task routing, agent handoffs, and output validation so AI-assisted dev stays predictable.',
-    stack: ['Node.js', 'TypeScript', 'Commander.js', 'Vitest'],
-    links: [
-      { label: 'github', icon: <Icon.github />, href: 'https://github.com/aiagentflow' },
-      { label: 'aiagentflow.dev', icon: <Icon.external />, href: 'https://aiagentflow.dev' },
-    ],
+    name: 'markdown.software',
+    href: 'https://github.com/raj-khan/markdown.software',
+    tagline:
+      'Free & open-source Markdown → PDF. Write with a live preview and download a polished, vector-quality PDF — no sign-up.',
+    stars: 4,
+    lang: 'TypeScript',
+    langColor: '#3178c6',
+    updated: 'Jun 2026',
+    tags: ['Markdown', 'PDF', 'Open Source'],
   },
   {
-    name: 'raj-khan/e2spec',
-    badge: 'open source',
-    tagline: 'Turns project estimates into structured development specs and LLM-ready prompts.',
-    about: 'Ruby CLI that takes rough project estimates and outputs structured specs, implementation plans, and prompts ready to drop into any LLM. Built on the OpenAI API.',
-    stack: ['Ruby', 'OpenAI API', 'CLI'],
-    links: [
-      { label: 'e2spec.com', icon: <Icon.external />, href: 'https://e2spec.com' },
-    ],
+    name: 'google-contacts-api',
+    href: 'https://github.com/raj-khan/google-contacts-api',
+    tagline:
+      'Export your Google contacts into a JSON file using the Google People API — a clean Node.js reference implementation.',
+    stars: 4,
+    lang: 'JavaScript',
+    langColor: '#f1e05a',
+    updated: 'Dec 2020',
+    tags: ['Google API', 'Node.js'],
   },
   {
-    name: 'raj-khan/seorankslab',
-    badge: 'open source',
-    tagline: 'Turns Search Console data into prioritized SEO tasks and AI-ready prompts.',
-    about: 'Connects to Google Search Console and scores your pages deterministically in code. Outputs weekly reports and prompts you can hand to an LLM. GSC data never leaves your machine.',
-    stack: ['Next.js', 'TypeScript', 'Supabase', 'Tailwind CSS'],
-    links: [
-      { label: 'github', icon: <Icon.github />, href: 'https://github.com/raj-khan/seorankslab' },
-      { label: 'seorankslab.com', icon: <Icon.external />, href: 'https://seorankslab.com' },
-    ],
+    name: 'nextjs-supabase-saas-boilerplate',
+    href: 'https://github.com/raj-khan/nextjs-supabase-saas-boilerplate',
+    tagline:
+      'Reusable architecture, coding-agent workflow, and engineering conventions for Next.js + Supabase SaaS projects.',
+    stars: 0,
+    lang: 'TypeScript',
+    langColor: '#3178c6',
+    updated: 'Jul 2026',
+    tags: ['Next.js', 'Supabase', 'SaaS'],
   },
   {
-    name: 'raj-khan/nextjs-supabase-saas-boilerplate',
-    badge: 'public',
-    tagline: 'Reusable architecture and engineering conventions for Next.js + Supabase SaaS.',
-    about: 'Repo structure, auth, database, and deploy patterns I reach for when starting a new SaaS. Opinionated but lightweight.',
-    stack: ['TypeScript', 'Next.js', 'Supabase', 'SaaS'],
-    links: [{ label: 'github', icon: <Icon.github />, href: 'https://github.com/raj-khan/nextjs-supabase-saas-boilerplate' }],
+    name: 'tighten',
+    href: 'https://github.com/raj-khan/tighten',
+    tagline:
+      'Tighten padded, AI-written docs: same meaning, fewer words. A plugin skill for Claude Code, Cursor, Codex and 50+ agents.',
+    stars: 0,
+    lang: 'JavaScript',
+    langColor: '#f1e05a',
+    updated: 'Jun 2026',
+    tags: ['AI', 'Docs', 'Plugin'],
   },
   {
-    name: 'raj-khan/pre-school-keyboard',
-    badge: 'public',
-    tagline: 'A browser typing game built for one kid. Large keys, voice feedback, emoji reactions.',
-    about: 'Built for my own kid. Each key press shows the character in large text, speaks it aloud, changes colors, and shows a friendly emoji. Taught me a lot about input latency and audio cues.',
-    stack: ['TypeScript', 'Web Audio', 'React'],
-    links: [{ label: 'github', icon: <Icon.github />, href: 'https://github.com/raj-khan/pre-school-keyboard' }],
+    name: 'subtitle-py',
+    href: 'https://github.com/raj-khan/subtitle-py',
+    tagline:
+      'Live, fully local English subtitles for whatever audio is playing on your laptop — real-time transcription with Whisper.',
+    stars: 0,
+    lang: 'Python',
+    langColor: '#3572A5',
+    updated: 'Jun 2026',
+    tags: ['Python', 'Whisper', 'Audio'],
+  },
+  {
+    name: 'kiddoschool',
+    href: 'https://github.com/raj-khan/kiddoschool',
+    tagline:
+      'A playful browser typing game for one child — big keys, voice feedback, color changes, and friendly emoji reactions.',
+    stars: 0,
+    lang: 'TypeScript',
+    langColor: '#3178c6',
+    updated: 'Jun 2026',
+    tags: ['React', 'Game', 'Kids'],
   },
 ]
 
 export function Projects() {
   return (
-    <section className="section container reveal" id="projects">
-      <div className="section-head">
-        <div>
-          <div className="section-eyebrow">
-            <span className="num">05 /</span> <span className="dot"></span>{' '}
-            <span>build artifacts</span>
-          </div>
-          <h2 className="section-title">
-            Public work. <em>Code you can read.</em>
-          </h2>
-        </div>
-        <p className="section-sub">
-          A few open repos. Most client work is private. These are the projects with public code.
-        </p>
+    <section className="section container" id="work">
+      <div className="section-label">
+        <span className="bar"></span> DEV
       </div>
+      <div className="section-head">
+        <h2 className="section-title">My Projects</h2>
+        <a
+          className="section-link"
+          href="https://github.com/raj-khan?tab=repositories"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          all repositories <Icon.external />
+        </a>
+      </div>
+
       <div className="projects-grid">
-        {PROJECTS.map((p, i) => (
-          <article className="project" key={i}>
-            <div className="project-head">
-              <div className="project-folder">
-                <Icon.folder />
-              </div>
-              <div className="project-title-row">
-                <div className="project-title">
-                  <span className="slash">{p.name.split('/')[0]}/</span>
-                  <span>{p.name.split('/')[1]}</span>
-                  <span className="badge">{p.badge}</span>
-                </div>
-                <div className="project-tagline">{p.tagline}</div>
-              </div>
+        {PROJECTS.map((p) => (
+          <a className="project" key={p.name} href={p.href} target="_blank" rel="noopener noreferrer">
+            <div className="project-name-row">
+              <span className="project-name">{p.name}</span>
+              <span className="project-ext">
+                <Icon.external />
+              </span>
             </div>
-            <div className="project-body">
-              <div className="project-row">
-                <span className="k">about</span>
-                <span className="v">{p.about}</span>
-              </div>
+            <p className="project-tagline">{p.tagline}</p>
+            <div className="project-meta">
+              <span className="stars">
+                <Icon.star /> {p.stars}
+              </span>
+              <span className="lang">
+                <span className="dot" style={{ background: p.langColor }}></span>
+                {p.lang}
+              </span>
+              <span className="updated">Updated {p.updated}</span>
             </div>
-            <div className="project-foot">
-              <div className="project-stack">
-                {p.stack.map((s) => (
-                  <span key={s}>{s}</span>
-                ))}
-              </div>
-              <div className="project-links">
-                {p.links.map((l, j) => (
-                  <a key={j} href={l.href} target="_blank" rel="noopener">
-                    {l.icon} {l.label}
-                  </a>
-                ))}
-              </div>
+            <div className="project-tags">
+              {p.tags.map((t) => (
+                <span className="project-tag" key={t}>
+                  {t}
+                </span>
+              ))}
             </div>
-          </article>
+          </a>
         ))}
+      </div>
+
+      <div className="show-all">
+        <a href="https://github.com/raj-khan" target="_blank" rel="noopener noreferrer">
+          Show All <Icon.arrowUpRight />
+        </a>
       </div>
     </section>
   )
