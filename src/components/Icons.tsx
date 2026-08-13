@@ -97,6 +97,11 @@ export const Icon = {
 			<path d="M14 2.5V7.5H19" />
 		</svg>
 	),
+	productHunt: (p: IconProps = {}) => (
+		<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...p}>
+			<path d="M14.5 2.5h-7v19h3v-6.5h4a5.75 5.75 0 0 0 0-12.5Zm-.1 9.5h-3.9V5.5h3.9a2.75 2.75 0 0 1 0 6.5Z" />
+		</svg>
+	),
 	calendar: (p: IconProps = {}) => (
 		<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" {...p}>
 			<rect x="3" y="5" width="18" height="16" rx="2" />

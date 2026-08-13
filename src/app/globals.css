@@ -234,6 +234,50 @@ svg { width: 1em; height: 1em; flex: none; display: inline-block; vertical-align
 .gh-stat svg { width: 13px; height: 13px; color: var(--text-4); }
 .gh-stat b { color: var(--text); font-weight: 600; font-family: var(--font-sans); font-size: 13px; }
 
+/* Organizations */
+.orgs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 26px;
+}
+.orgs-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-4);
+  margin-right: 4px;
+}
+.org {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: var(--r-full);
+  padding: 5px 12px 5px 6px;
+  transition: all 160ms ease;
+}
+.org:hover { border-color: var(--border-hi); background: var(--bg-hover); }
+.org img {
+  width: 24px; height: 24px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.org-name { font-size: 13px; font-weight: 500; color: var(--text-2); }
+.org:hover .org-name { color: var(--text); }
+.org-tag {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-4);
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  padding: 1px 7px;
+  border-radius: var(--r-full);
+}
+
 /* Socials */
 .socials {
   display: flex;
@@ -312,7 +356,7 @@ svg { width: 1em; height: 1em; flex: none; display: inline-block; vertical-align
 /* ============================================================
    Section scaffolding
    ============================================================ */
-.section { padding: 8px 0 56px; }
+.section { padding: 8px 0 56px; scroll-margin-top: 72px; }
 .section-label {
   display: flex;
   align-items: center;
@@ -471,6 +515,19 @@ svg { width: 1em; height: 1em; flex: none; display: inline-block; vertical-align
 }
 .show-all a:hover { color: var(--text); border-color: var(--border-hi); background: var(--bg-hover); }
 .show-all svg { width: 13px; height: 13px; }
+
+/* Product Hunt badge (rendered only when a launch URL is configured) */
+.show-all.ph a {
+  color: #da552f;
+  border-color: #f2c3b3;
+  background: #fef5f2;
+}
+.show-all.ph a:hover {
+  color: #c13f1a;
+  border-color: #e8a590;
+  background: #fdece5;
+}
+.show-all.ph svg { width: 14px; height: 14px; }
 
 /* ============================================================
    Experience

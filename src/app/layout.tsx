@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Header } from "@/components/Header";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://meherullah.dev/";
+const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || "https://meherullah.dev/").replace(/\/+$/, "");
 const siteName = "Meher Ullah Khan Raj — Software Engineer";
 const siteDescription =
 	"Software Engineer at Snappymob. Building production web applications with TypeScript, React, Next.js, Node.js, and AWS. Based in Kuala Lumpur, Malaysia.";

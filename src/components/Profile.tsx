@@ -26,6 +26,19 @@ const STATS = [
   { icon: <Icon.file />, value: '6', label: 'articles' },
 ]
 
+// GitHub's API reports no public org memberships for this account
+// (org visibility is private in GitHub settings), so this is listed
+// manually. To auto-show orgs instead: GitHub → Settings → Profile →
+// "Display organizations on your profile".
+const ORGS = [
+  {
+    name: 'AI Agent Flow',
+    handle: 'aiagentflow',
+    href: 'https://github.com/aiagentflow',
+    tag: 'open source',
+  },
+]
+
 const SOCIALS = [
   {
     label: 'GitHub',
@@ -109,6 +122,29 @@ export function Profile({
             {s.icon}
             <b>{s.value}</b> {s.label}
           </span>
+        ))}
+      </div>
+
+      <div className="orgs">
+        <span className="orgs-label">Organizations</span>
+        {ORGS.map((o) => (
+          <a
+            className="org"
+            key={o.handle}
+            href={o.href}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src={`https://avatars.githubusercontent.com/${o.handle}?v=4`}
+              alt={o.name}
+              width={26}
+              height={26}
+              loading="lazy"
+            />
+            <span className="org-name">{o.name}</span>
+            <span className="org-tag">{o.tag}</span>
+          </a>
         ))}
       </div>
 

@@ -3,9 +3,12 @@
 import { useEffect, useState } from 'react'
 import { Icon } from '@/components/Icons'
 
+// NOTE: Work/Articles point to the homepage with a hash so the links
+// work from ANY page (home, /blog, article pages). HomeContent listens
+// for the hash and switches tabs + scrolls to the section.
 const NAV = [
-  { label: 'Work', href: '#work' },
-  { label: 'Articles', href: '#articles' },
+  { label: 'Work', href: '/#work' },
+  { label: 'Articles', href: '/#articles' },
   { label: 'Blog', href: '/blog' },
 ]
 
@@ -22,7 +25,7 @@ export function Header() {
   return (
     <header className={'topbar ' + (scrolled ? 'scrolled' : '')}>
       <div className="container topbar-inner">
-        <a href="#top" className="topbar-brand">
+        <a href="/" className="topbar-brand">
           <img
             src="/avatar.jpg"
             alt="Meher Ullah Khan Raj"

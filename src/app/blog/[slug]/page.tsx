@@ -18,7 +18,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: BlogPostPageProps) {
 	const post = await getPostBySlug(params.slug);
-	const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://meherullah.dev/";
+	const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || "https://meherullah.dev/").replace(/\/+$/, "");
 
 	if (!post) {
 		return {

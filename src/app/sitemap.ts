@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next';
 import { getAllPosts } from '@/lib/blog';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://meherullah.dev/';
+  const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || 'https://meherullah.dev/').replace(/\/+$/, '');
 
   const routes: MetadataRoute.Sitemap = [
     {
