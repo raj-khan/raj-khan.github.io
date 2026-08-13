@@ -1,11 +1,11 @@
 import { Icon } from '@/components/Icons'
 
 // ----------------------------------------------------------------
-// Product Hunt badge — set this to your Product Hunt launch URL to
-// show the badge under the projects, e.g.
-//   "https://www.producthunt.com/posts/markdown-software"
+// Product Hunt — set this to your Product Hunt profile or a launch
+// URL to show the badge under the projects, e.g.
+//   "https://www.producthunt.com/@meherullah"
 // Leave empty ("") to hide it.
-const PRODUCT_HUNT_URL = ''
+const PRODUCT_HUNT_URL = 'https://www.producthunt.com/@meherullah'
 // ----------------------------------------------------------------
 
 type Project = {
@@ -146,7 +146,7 @@ export function Projects() {
       {PRODUCT_HUNT_URL && (
         <div className="show-all ph">
           <a href={PRODUCT_HUNT_URL} target="_blank" rel="noopener noreferrer">
-            <Icon.productHunt /> Also on Product Hunt
+            <Icon.productHunt /> Product Hunt
           </a>
         </div>
       )}
