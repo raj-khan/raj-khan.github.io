@@ -162,19 +162,6 @@ svg { width: 1em; height: 1em; flex: none; display: inline-block; vertical-align
   letter-spacing: -0.02em;
   line-height: 1.2;
 }
-.verified {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  color: var(--accent);
-  font-size: 12px;
-  font-weight: 500;
-  background: var(--accent-soft);
-  border: 1px solid var(--accent-line);
-  padding: 2px 8px 2px 5px;
-  border-radius: var(--r-full);
-}
-.verified svg { width: 12px; height: 12px; }
 .profile-role {
   font-size: 15px;
   color: var(--text-2);
@@ -645,14 +632,6 @@ svg { width: 1em; height: 1em; flex: none; display: inline-block; vertical-align
   color: var(--text-4);
 }
 .foot-left { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
-.foot-dot {
-  width: 7px; height: 7px;
-  border-radius: 50%;
-  background: #2da44e;
-  display: inline-block;
-  margin-right: 6px;
-  vertical-align: 1px;
-}
 .foot-socials { display: flex; gap: 4px; }
 .foot-socials a {
   display: grid;

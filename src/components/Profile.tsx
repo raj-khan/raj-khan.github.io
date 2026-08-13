@@ -94,9 +94,6 @@ export function Profile({
         <div style={{ minWidth: 0 }}>
           <div className="profile-name-row">
             <h1 className="profile-name">Meher Ullah Khan Raj</h1>
-            <span className="verified" title="Verified profile">
-              <Icon.check /> verified
-            </span>
           </div>
           <p className="profile-role">
             <strong>Software Engineer</strong> at Snappymob

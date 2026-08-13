@@ -14,14 +14,7 @@ export function Footer() {
     <footer className="foot">
       <div className="container foot-inner">
         <div className="foot-left">
-          <span>
-            © {year} Meher Ullah Khan Raj
-          </span>
-          <span>·</span>
-          <span>
-            <span className="foot-dot"></span>
-            available for work
-          </span>
+          <span>© {year} Meher Ullah Khan Raj</span>
         </div>
         <div className="foot-socials">
           <a href="https://github.com/raj-khan" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
